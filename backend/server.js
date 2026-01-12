@@ -187,10 +187,10 @@ app.get('/api/stats', authenticateToken, (req, res) => {
 app.post('/api/export-tracker', authenticateToken, (req, res) => {
   try {
     const userId = req.user.id;
-    db.all('SELECT li.*, ui.collected, ui.volume_number FROM loot_items li LEFT JOIN user_items ui ON li.id = ui.item_id AND ui.user_id = ?', [userId], (err, items) => {
+    db.all('SELECT li.*, ui.collected FROM loot_items li LEFT JOIN user_items ui ON li.id = ui.item_id AND ui.user_id = ?', [userId], (err, items) => {
       if (err) return res.status(500).json({ error: 'Failed to export tracker data' });
       
-      const exportData = items.map(item => ({
+      const exportItems = items.map(item => ({
         base_id: item.base_id,
         name: item.name,
         category: item.category,
@@ -198,25 +198,13 @@ app.post('/api/export-tracker', authenticateToken, (req, res) => {
         collected: item.collected === 1
       }));
       
-      const exportJson = {
-        version: '1.0',
-        exportDate: new Date().toISOString(),
-        items: exportData
-      };
-      
-      const filePath = path.join(__dirname, 'tracker-export.json');
-      fs.writeFileSync(filePath, JSON.stringify(exportJson, null, 2));
-      
       res.json({
-        success: true,
-        message: 'Tracker exportado con éxito',
-        filePath: filePath,
-        itemCount: exportData.length
+        items: exportItems
       });
     });
   } catch (error) {
     console.error('Error exporting tracker data:', error);
-    res.status(500).json({ success: false, error: 'Error al exportar tracker data' });
+    res.status(500).json({ error: 'Error al exportar tracker data' });
   }
 });
 

@@ -256,7 +256,8 @@ export default {
         })
         if (response.ok) {
           const data = await response.json()
-          const blob = new Blob([JSON.stringify(data.exportData || { items: this.items.filter(i => i.collected).map(i => ({ base_id: i.base_id, name: i.name, collected: true })) }, null, 2)], { type: 'application/json' })
+          const exportItems = data.items || []
+          const blob = new Blob([JSON.stringify({ items: exportItems }, null, 2)], { type: 'application/json' })
           const url = URL.createObjectURL(blob)
           const a = document.createElement('a')
           a.href = url
