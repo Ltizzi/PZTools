@@ -25,6 +25,12 @@ export default {
       selectedCategory: '',
       stats: null,
       currentView: 'cards',
+      selectedFilter: 'all',
+      filterOptions: [
+        { id: 'all', name: 'Todos', icon: '📋' },
+        { id: 'collected', name: 'Recolectados', icon: '✅' },
+        { id: 'missing', name: 'Faltantes', icon: '⬜' }
+      ],
       viewModes: [
         { id: 'cards', name: 'Tarjetas', icon: '🎴' },
         { id: 'icons', name: 'Iconos', icon: '🎨' },
@@ -53,6 +59,12 @@ export default {
   watch: {
     currentView(newView) {
       localStorage.setItem('pz_view_mode', newView)
+    },
+    selectedFilter() {
+      this.loadItems()
+    },
+    selectedCategory() {
+      this.loadItems()
     }
   },
   mounted() {
@@ -188,7 +200,12 @@ export default {
     },
     async loadItems() {
       try {
-        const response = await fetch('/api/items', {
+        const params = new URLSearchParams()
+        if (this.selectedCategory) params.append('category', this.selectedCategory)
+        if (this.search) params.append('search', this.search)
+        if (this.selectedFilter !== 'all') params.append('filter', this.selectedFilter)
+        
+        const response = await fetch('/api/items?' + params.toString(), {
           headers: { 'Authorization': `Bearer ${this.token}` }
         })
         if (response.ok) {
@@ -299,6 +316,9 @@ export default {
           <option value="">Todas las categorías</option>
           <option v-for="cat in categories" :key="cat" :value="cat">{{ translateCategory(cat) }}</option>
         </select>
+      </div>
+      <div class="flex gap-2 overflow-x-auto pb-2">
+        <button v-for="filter in filterOptions" :key="filter.id" @click="selectedFilter = filter.id" class="px-3 sm:px-4 py-2 rounded-lg transition whitespace-nowrap text-sm" :class="selectedFilter === filter.id ? 'bg-red-600 text-white' : 'bg-gray-700 hover:bg-gray-600'" :title="filter.name">{{ filter.icon }} {{ filter.name }}</button>
       </div>
       <div class="flex gap-2 overflow-x-auto pb-2">
         <button v-for="view in viewModes" :key="view.id" @click="currentView = view.id" class="px-3 sm:px-4 py-2 rounded-lg transition whitespace-nowrap text-sm" :class="currentView === view.id ? 'bg-red-600 text-white' : 'bg-gray-700 hover:bg-gray-600'">{{ view.icon }} {{ view.name }}</button>
