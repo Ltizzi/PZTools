@@ -6,18 +6,42 @@
     "growthTime": "50 days",
     "calories": 15,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "best" },
-      "may": { "status": "best" },
-      "jun": { "status": "best" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "worst_out" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "best"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "best"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "worst_out"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "potato": {
@@ -27,18 +51,42 @@
     "growthTime": "90 days",
     "calories": 80,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "seasonal" },
-      "mar": { "status": "best" },
-      "apr": { "status": "best" },
-      "may": { "status": "seasonal" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "best" },
-      "nov": { "status": "seasonal" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "seasonal"
+      },
+      "mar": {
+        "status": "best"
+      },
+      "apr": {
+        "status": "best"
+      },
+      "may": {
+        "status": "seasonal"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "best"
+      },
+      "nov": {
+        "status": "seasonal"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "carrot": {
@@ -48,18 +96,42 @@
     "growthTime": "70 days",
     "calories": 41,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "best" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "best" },
-      "nov": { "status": "seasonal" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "best"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "best"
+      },
+      "nov": {
+        "status": "seasonal"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "cabbage": {
@@ -69,18 +141,42 @@
     "growthTime": "75 days",
     "calories": 25,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_out" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "best" },
-      "nov": { "status": "seasonal" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_out"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "best"
+      },
+      "nov": {
+        "status": "seasonal"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "broccoli": {
@@ -90,18 +186,42 @@
     "growthTime": "75 days",
     "calories": 30,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "best" },
-      "nov": { "status": "seasonal" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "best"
+      },
+      "nov": {
+        "status": "seasonal"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "cauliflower": {
@@ -111,18 +231,42 @@
     "growthTime": "75 days",
     "calories": 25,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "best" },
-      "nov": { "status": "seasonal" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "best"
+      },
+      "nov": {
+        "status": "seasonal"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "onion": {
@@ -132,18 +276,42 @@
     "growthTime": "100 days",
     "calories": 40,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "seasonal" },
-      "mar": { "status": "best" },
-      "apr": { "status": "best" },
-      "may": { "status": "seasonal" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "seasonal"
+      },
+      "mar": {
+        "status": "best"
+      },
+      "apr": {
+        "status": "best"
+      },
+      "may": {
+        "status": "seasonal"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "garlic": {
@@ -153,18 +321,42 @@
     "growthTime": "90 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "worst_in" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "worst_in"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "leek": {
@@ -174,18 +366,42 @@
     "growthTime": "90 days",
     "calories": 55,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "radish": {
@@ -195,18 +411,42 @@
     "growthTime": "30 days",
     "calories": 16,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "best" },
-      "may": { "status": "seasonal" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "best" },
-      "nov": { "status": "seasonal" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "best"
+      },
+      "may": {
+        "status": "seasonal"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "best"
+      },
+      "nov": {
+        "status": "seasonal"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "strawberry": {
@@ -216,18 +456,42 @@
     "growthTime": "60 days",
     "calories": 33,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "best" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "best" },
-      "nov": { "status": "seasonal" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "best"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "best"
+      },
+      "nov": {
+        "status": "seasonal"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "spinach": {
@@ -237,18 +501,42 @@
     "growthTime": "70 days",
     "calories": 23,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "best" },
-      "may": { "status": "seasonal" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "best" },
-      "nov": { "status": "seasonal" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "best"
+      },
+      "may": {
+        "status": "seasonal"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "best"
+      },
+      "nov": {
+        "status": "seasonal"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "zucchini": {
@@ -258,18 +546,42 @@
     "growthTime": "50 days",
     "calories": 17,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "best" },
-      "jul": { "status": "seasonal" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "worst_out" },
-      "oct": { "status": "worst_out" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "best"
+      },
+      "jul": {
+        "status": "seasonal"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "worst_out"
+      },
+      "oct": {
+        "status": "worst_out"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "pumpkin": {
@@ -279,18 +591,42 @@
     "growthTime": "100 days",
     "calories": 26,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "best" },
-      "jul": { "status": "seasonal" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "worst_out" },
-      "oct": { "status": "worst_out" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "best"
+      },
+      "jul": {
+        "status": "seasonal"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "worst_out"
+      },
+      "oct": {
+        "status": "worst_out"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "watermelon": {
@@ -300,18 +636,42 @@
     "growthTime": "85 days",
     "calories": 30,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "best" },
-      "jul": { "status": "seasonal" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "worst_out" },
-      "oct": { "status": "worst_out" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "best"
+      },
+      "jul": {
+        "status": "seasonal"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "worst_out"
+      },
+      "oct": {
+        "status": "worst_out"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "corn": {
@@ -321,18 +681,42 @@
     "growthTime": "70 days",
     "calories": 96,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "worst_out" },
-      "oct": { "status": "worst_out" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "worst_out"
+      },
+      "oct": {
+        "status": "worst_out"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "cucumber": {
@@ -342,18 +726,42 @@
     "growthTime": "50 days",
     "calories": 15,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "seasonal" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "worst_out" },
-      "oct": { "status": "worst_out" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "seasonal"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "worst_out"
+      },
+      "oct": {
+        "status": "worst_out"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "greenpeas": {
@@ -363,18 +771,42 @@
     "growthTime": "60 days",
     "calories": 81,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "worst_out" },
-      "oct": { "status": "worst_out" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "worst_out"
+      },
+      "oct": {
+        "status": "worst_out"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "bellpepper": {
@@ -384,18 +816,42 @@
     "growthTime": "75 days",
     "calories": 27,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "best" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "best"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "habanero": {
@@ -405,18 +861,42 @@
     "growthTime": "75 days",
     "calories": 30,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "best" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "best"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "jalapeno": {
@@ -426,18 +906,42 @@
     "growthTime": "75 days",
     "calories": 30,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "best" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "best"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "wheat": {
@@ -447,18 +951,42 @@
     "growthTime": "120 days",
     "calories": 339,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "worst_out" },
-      "may": { "status": "worst_out" },
-      "jun": { "status": "worst_out" },
-      "jul": { "status": "worst_out" },
-      "aug": { "status": "worst_out" },
-      "sep": { "status": "best" },
-      "oct": { "status": "best" },
-      "nov": { "status": "seasonal" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "worst_out"
+      },
+      "may": {
+        "status": "worst_out"
+      },
+      "jun": {
+        "status": "worst_out"
+      },
+      "jul": {
+        "status": "worst_out"
+      },
+      "aug": {
+        "status": "worst_out"
+      },
+      "sep": {
+        "status": "best"
+      },
+      "oct": {
+        "status": "best"
+      },
+      "nov": {
+        "status": "seasonal"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "barley": {
@@ -468,18 +996,42 @@
     "growthTime": "90 days",
     "calories": 354,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "best" },
-      "nov": { "status": "seasonal" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "best"
+      },
+      "nov": {
+        "status": "seasonal"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "rye": {
@@ -489,18 +1041,42 @@
     "growthTime": "90 days",
     "calories": 338,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "best" },
-      "nov": { "status": "seasonal" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "best"
+      },
+      "nov": {
+        "status": "seasonal"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "soybeans": {
@@ -510,18 +1086,42 @@
     "growthTime": "55 days",
     "calories": 347,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "hemp": {
@@ -531,18 +1131,42 @@
     "growthTime": "90 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "tobacco": {
@@ -552,18 +1176,42 @@
     "growthTime": "90 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "sugarbeet": {
@@ -573,18 +1221,42 @@
     "growthTime": "75 days",
     "calories": 43,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "best" },
-      "may": { "status": "seasonal" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "best"
+      },
+      "may": {
+        "status": "seasonal"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "sweetpotato": {
@@ -594,18 +1266,42 @@
     "growthTime": "100 days",
     "calories": 86,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "best" },
-      "jul": { "status": "seasonal" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "worst_out" },
-      "oct": { "status": "worst_out" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "best"
+      },
+      "jul": {
+        "status": "seasonal"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "worst_out"
+      },
+      "oct": {
+        "status": "worst_out"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "hops": {
@@ -615,18 +1311,42 @@
     "growthTime": "90 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "seasonal" },
-      "jun": { "status": "worst_in" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "seasonal"
+      },
+      "jun": {
+        "status": "worst_in"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "basil": {
@@ -636,18 +1356,42 @@
     "growthTime": "60 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "best" },
-      "may": { "status": "seasonal" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "best"
+      },
+      "may": {
+        "status": "seasonal"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "oregano": {
@@ -657,18 +1401,42 @@
     "growthTime": "60 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "seasonal" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "seasonal" },
-      "jun": { "status": "worst_in" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "seasonal"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "seasonal"
+      },
+      "jun": {
+        "status": "worst_in"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "parsley": {
@@ -678,18 +1446,42 @@
     "growthTime": "60 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "seasonal" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "seasonal" },
-      "jun": { "status": "worst_in" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "seasonal"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "seasonal"
+      },
+      "jun": {
+        "status": "worst_in"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "sage": {
@@ -699,18 +1491,42 @@
     "growthTime": "60 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "seasonal" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "seasonal" },
-      "jun": { "status": "worst_in" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "seasonal"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "seasonal"
+      },
+      "jun": {
+        "status": "worst_in"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "blacksage": {
@@ -720,18 +1536,42 @@
     "growthTime": "60 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "best" },
-      "may": { "status": "seasonal" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "best"
+      },
+      "may": {
+        "status": "seasonal"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "coriander": {
@@ -741,18 +1581,42 @@
     "growthTime": "60 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "marigold": {
@@ -762,18 +1626,42 @@
     "growthTime": "60 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "poppy": {
@@ -783,18 +1671,42 @@
     "growthTime": "90 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "lavender": {
@@ -804,18 +1716,42 @@
     "growthTime": "90 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "rose": {
@@ -825,18 +1761,42 @@
     "growthTime": "90 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "sunflower": {
@@ -846,18 +1806,42 @@
     "growthTime": "90 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "chamomile": {
@@ -867,18 +1851,42 @@
     "growthTime": "60 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "broadleafplantain": {
@@ -888,18 +1896,42 @@
     "growthTime": "60 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "comfrey": {
@@ -909,18 +1941,42 @@
     "growthTime": "60 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "mallow": {
@@ -930,18 +1986,42 @@
     "growthTime": "60 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "thyme": {
@@ -951,18 +2031,42 @@
     "growthTime": "60 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "best" },
-      "may": { "status": "seasonal" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "best"
+      },
+      "may": {
+        "status": "seasonal"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "kale": {
@@ -972,18 +2076,42 @@
     "growthTime": "60 days",
     "calories": 49,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "chives": {
@@ -993,18 +2121,42 @@
     "growthTime": "60 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "best" },
-      "may": { "status": "best" },
-      "jun": { "status": "best" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "best"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "best"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "flax": {
@@ -1014,18 +2166,42 @@
     "growthTime": "90 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "worst_out" },
-      "apr": { "status": "seasonal" },
-      "may": { "status": "best" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "worst_out"
+      },
+      "apr": {
+        "status": "seasonal"
+      },
+      "may": {
+        "status": "best"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "lemongrass": {
@@ -1035,18 +2211,42 @@
     "growthTime": "60 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "best" },
-      "may": { "status": "seasonal" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "best"
+      },
+      "may": {
+        "status": "seasonal"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "lettuce": {
@@ -1056,18 +2256,42 @@
     "growthTime": "45 days",
     "calories": 15,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "best" },
-      "may": { "status": "seasonal" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "best"
+      },
+      "may": {
+        "status": "seasonal"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "rosemary": {
@@ -1077,18 +2301,42 @@
     "growthTime": "90 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "best" },
-      "may": { "status": "seasonal" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "best"
+      },
+      "may": {
+        "status": "seasonal"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   },
   "mint": {
@@ -1098,18 +2346,87 @@
     "growthTime": "60 days",
     "calories": 0,
     "months": {
-      "jan": { "status": "worst_out" },
-      "feb": { "status": "worst_out" },
-      "mar": { "status": "seasonal" },
-      "apr": { "status": "best" },
-      "may": { "status": "seasonal" },
-      "jun": { "status": "seasonal" },
-      "jul": { "status": "worst_in" },
-      "aug": { "status": "worst_in" },
-      "sep": { "status": "seasonal" },
-      "oct": { "status": "seasonal" },
-      "nov": { "status": "worst_out" },
-      "dec": { "status": "worst_out" }
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "worst_out"
+      },
+      "mar": {
+        "status": "seasonal"
+      },
+      "apr": {
+        "status": "best"
+      },
+      "may": {
+        "status": "seasonal"
+      },
+      "jun": {
+        "status": "seasonal"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "worst_in"
+      },
+      "sep": {
+        "status": "seasonal"
+      },
+      "oct": {
+        "status": "seasonal"
+      },
+      "nov": {
+        "status": "worst_out"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
+    }
+  },
+  "turnip": {
+    "name": "Nabo",
+    "nameEn": "Turnip",
+    "icon": "🥔",
+    "growthTime": "50 days",
+    "calories": 28,
+    "months": {
+      "jan": {
+        "status": "worst_out"
+      },
+      "feb": {
+        "status": "seasonal"
+      },
+      "mar": {
+        "status": "best"
+      },
+      "apr": {
+        "status": "best"
+      },
+      "may": {
+        "status": "seasonal"
+      },
+      "jun": {
+        "status": "worst_in"
+      },
+      "jul": {
+        "status": "worst_in"
+      },
+      "aug": {
+        "status": "seasonal"
+      },
+      "sep": {
+        "status": "best"
+      },
+      "oct": {
+        "status": "best"
+      },
+      "nov": {
+        "status": "seasonal"
+      },
+      "dec": {
+        "status": "worst_out"
+      }
     }
   }
 }

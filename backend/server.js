@@ -229,17 +229,27 @@ app.post('/api/import-tracker', authenticateToken, (req, res) => {
       return res.status(400).json({ error: 'Datos de importación inválidos' });
     }
     
-    db.all('SELECT id, base_id FROM loot_items', (err, allItems) => {
+    db.all('SELECT id, base_id, name FROM loot_items', (err, allItems) => {
       if (err) return res.status(500).json({ error: 'Failed to fetch items' });
       
-      const itemMap = new Map();
-      allItems.forEach(item => itemMap.set(item.base_id, item.id));
+      const itemMapById = new Map();
+      const itemMapByName = new Map();
+      allItems.forEach(item => {
+        itemMapById.set(item.base_id, item.id);
+        itemMapByName.set(item.name.toLowerCase().trim(), item.id);
+      });
       
       let imported = 0;
       let skipped = 0;
+      let notFound = 0;
       
       items.forEach(item => {
-        const lootItemId = itemMap.get(item.base_id);
+        let lootItemId = itemMapById.get(item.base_id);
+        
+        if (!lootItemId && item.name) {
+          lootItemId = itemMapByName.get(item.name.toLowerCase().trim());
+        }
+        
         if (lootItemId) {
           db.get('SELECT collected FROM user_items WHERE user_id = ? AND item_id = ?', [userId, lootItemId], (err, existing) => {
             if (err) return;
@@ -252,13 +262,15 @@ app.post('/api/import-tracker', authenticateToken, (req, res) => {
                 });
             }
           });
+        } else {
+          notFound++;
         }
       });
       
       setTimeout(() => {
         res.json({
           success: true,
-          message: `Import completado: ${imported} items importados, ${skipped} ya existentes`
+          message: `Import completado: ${imported} items importados, ${skipped} ya existentes, ${notFound} no encontrados`
         });
       }, 500);
     });

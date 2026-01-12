@@ -247,6 +247,61 @@ export default {
       } catch (err) {
         console.error('Error toggling item:', err)
       }
+    },
+    async exportTracker() {
+      try {
+        const response = await fetch('/api/export-tracker', {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${this.token}` }
+        })
+        if (response.ok) {
+          const data = await response.json()
+          const blob = new Blob([JSON.stringify(data.exportData || { items: this.items.filter(i => i.collected).map(i => ({ base_id: i.base_id, name: i.name, collected: true })) }, null, 2)], { type: 'application/json' })
+          const url = URL.createObjectURL(blob)
+          const a = document.createElement('a')
+          a.href = url
+          a.download = 'pz-tracker-export.json'
+          a.click()
+          URL.revokeObjectURL(url)
+        }
+      } catch (err) {
+        console.error('Error exporting tracker:', err)
+      }
+    },
+    async importTracker(event) {
+      const file = event.target.files[0]
+      if (!file) return
+      
+      try {
+        const text = await file.text()
+        const data = JSON.parse(text)
+        const items = data.items || data
+        
+        if (!Array.isArray(items)) {
+          alert('Archivo de importación inválido')
+          return
+        }
+        
+        const response = await fetch('/api/import-tracker', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${this.token}` },
+          body: JSON.stringify({ items })
+        })
+        
+        if (response.ok) {
+          const result = await response.json()
+          alert(result.message)
+          this.loadItems()
+          this.loadStats()
+        } else {
+          const error = await response.json()
+          alert(error.error || 'Error al importar')
+        }
+      } catch (err) {
+        console.error('Error importing tracker:', err)
+        alert('Error al leer el archivo')
+      }
+      event.target.value = ''
     }
   }
 }
@@ -280,6 +335,9 @@ export default {
       </div>
       <p class="text-gray-400 text-sm sm:text-base">Cuenta: {{ user.username }}</p>
       <div class="flex gap-2">
+        <input type="file" id="importFile" accept=".json" class="hidden" @change="importTracker" />
+        <button @click="exportTracker" class="bg-green-700 hover:bg-green-600 px-3 py-2 rounded-lg transition text-sm" title="Exportar progreso">💾 Exportar</button>
+        <label for="importFile" class="bg-blue-700 hover:bg-blue-600 px-3 py-2 rounded-lg transition text-sm cursor-pointer" title="Importar progreso">📂 Importar</label>
         <button @click="logout" class="bg-gray-700 hover:bg-gray-600 px-3 py-2 rounded-lg transition text-sm">Cerrar Sesión</button>
       </div>
     </header>

@@ -1365,6 +1365,182 @@
       "xp": 15
     }
   ],
-  "comicsAndPapers": [],
-  "vhsTapes": []
+  "comicsAndPapers": [
+    {
+      "id": "Base.ComicBook1",
+      "name": "El Gigante de Kentucky",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.ComicBook2",
+      "name": "Spiffo Increíble",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.ComicBook3",
+      "name": "Las Aventuras de Spiffo",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.ComicBook4",
+      "name": "Spiffo en el Callejón",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.ComicBook5",
+      "name": "Spiffo vs El Zombi",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.ComicBook6",
+      "name": "El Regreso de Spiffo",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.ComicBook7",
+      "name": "Spiffo Salvaje",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.Magazine1",
+      "name": "Revista de Moda",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.Magazine2",
+      "name": "Revista de Cine",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.Magazine3",
+      "name": "Revista de Coches",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.Magazine4",
+      "name": "Revista de Jardinería",
+      "skill": "Agriculture",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.Magazine5",
+      "name": "Revista de Decoración",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.Magazine6",
+      "name": "Revista de Electrónica",
+      "skill": "Electricity",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.Magazine7",
+      "name": "Revista de Mecánica",
+      "skill": "Mechanics",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.Magazine8",
+      "name": "Revista de Carpintería",
+      "skill": "Carpentry",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.Newspaper1",
+      "name": "Periódico Viejo",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.Newspaper2",
+      "name": "Periódico Knox County",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.Newspaper3",
+      "name": "Periódico de Muldraugh",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.Newspaper4",
+      "name": "Periódico West Point",
+      "skill": null,
+      "is_skill_related": false
+    }
+  ],
+  "vhsTapes": [
+    {
+      "id": "Base.HomeVHS_Cooking",
+      "name": "VHS Hogar - Cocina",
+      "skill": "Cooking",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.HomeVHS_Electricity",
+      "name": "VHS Hogar - Electricidad",
+      "skill": "Electricity",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.HomeVHS_Foraging",
+      "name": "VHS Hogar - Forrajeo",
+      "skill": "Foraging",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.HomeVHS_Mechanics",
+      "name": "VHS Hogar - Mecánica",
+      "skill": "Mechanics",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.HomeVHS_Sandpaper",
+      "name": "VHS Hogar - Lijado",
+      "skill": "Carpentry",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.HomeVHS_S_firstaid",
+      "name": "VHS Hogar - Primeros Auxilios",
+      "skill": "FirstAid",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.HomeVHS_Tailoring",
+      "name": "VHS Hogar - Costura",
+      "skill": "Tailoring",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.HomeVHS_Trapping",
+      "name": "VHS Hogar - Trampas",
+      "skill": "Trapping",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.HomeVHS_Gardening1",
+      "name": "VHS Hogar - Jardinería 1",
+      "skill": "Gardening",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.HomeVHS_Gardening2",
+      "name": "VHS Hogar - Jardinería 2",
+      "skill": "Gardening",
+      "is_skill_related": true
+    }
+  ]
 }
