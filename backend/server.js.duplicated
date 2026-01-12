@@ -1,0 +1,1076 @@
+const express = require('express');
+const cors = require('cors');
+const sqlite3 = require('sqlite3').verbose();
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const path = require('path');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+const JWT_SECRET = process.env.JWT_SECRET || 'pz-secret-key-change-in-production';
+
+app.use(cors());
+app.use(express.json());
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+const db = new sqlite3.Database(':memory:');
+
+let adminPassword = '12345';
+
+db.serialize(() => {
+  db.run(`
+    CREATE TABLE IF NOT EXISTS users (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      username TEXT UNIQUE NOT NULL,
+      password TEXT NOT NULL,
+      display_name TEXT,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
+
+  db.run(`
+    CREATE TABLE IF NOT EXISTS loot_items (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      base_id TEXT UNIQUE NOT NULL,
+      name TEXT NOT NULL,
+      category TEXT NOT NULL,
+      skill TEXT,
+      volumes INTEGER DEFAULT 1,
+      is_single_volume BOOLEAN DEFAULT 1,
+      is_skill_related BOOLEAN DEFAULT 1
+    )
+  `);
+
+  db.run(`
+    CREATE TABLE IF NOT EXISTS user_progress (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL,
+      item_id INTEGER NOT NULL,
+      volume_number INTEGER DEFAULT 1,
+      collected BOOLEAN DEFAULT 0,
+      UNIQUE(user_id, item_id, volume_number),
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+      FOREIGN KEY (item_id) REFERENCES loot_items(id) ON DELETE CASCADE
+    )
+  `);
+
+  const skillBooks = [
+    { id: 'Base.AgricultureBook1', name: 'Agriculture Vol. 1', skill: 'Agriculture' },
+    { id: 'Base.AgricultureBook2', name: 'Agriculture Vol. 2', skill: 'Agriculture' },
+    { id: 'Base.AgricultureBook3', name: 'Agriculture Vol. 3', skill: 'Agriculture' },
+    { id: 'Base.AgricultureBook4', name: 'Agriculture Vol. 4', skill: 'Agriculture' },
+    { id: 'Base.AgricultureBook5', name: 'Agriculture Vol. 5', skill: 'Agriculture' },
+    { id: 'Base.CookingBook1', name: 'Cooking Vol. 1', skill: 'Cooking' },
+    { id: 'Base.CookingBook2', name: 'Cooking Vol. 2', skill: 'Cooking' },
+    { id: 'Base.CookingBook3', name: 'Cooking Vol. 3', skill: 'Cooking' },
+    { id: 'Base.CookingBook4', name: 'Cooking Vol. 4', skill: 'Cooking' },
+    { id: 'Base.CookingBook5', name: 'Cooking Vol. 5', skill: 'Cooking' },
+    { id: 'Base.DoctorBook1', name: 'Doctor Vol. 1', skill: 'Doctor' },
+    { id: 'Base.DoctorBook2', name: 'Doctor Vol. 2', skill: 'Doctor' },
+    { id: 'Base.DoctorBook3', name: 'Doctor Vol. 3', skill: 'Doctor' },
+    { id: 'Base.DoctorBook4', name: 'Doctor Vol. 4', skill: 'Doctor' },
+    { id: 'Base.DoctorBook5', name: 'Doctor Vol. 5', skill: 'Doctor' },
+    { id: 'Base.ElectricianBook1', name: 'Electrician Vol. 1', skill: 'Electricity' },
+    { id: 'Base.ElectricianBook2', name: 'Electrician Vol. 2', skill: 'Electricity' },
+    { id: 'Base.ElectricianBook3', name: 'Electrician Vol. 3', skill: 'Electricity' },
+    { id: 'Base.ElectricianBook4', name: 'Electrician Vol. 4', skill: 'Electricity' },
+    { id: 'Base.ElectricianBook5', name: 'Electrician Vol. 5', skill: 'Electricity' },
+    { id: 'Base.FishingBook1', name: 'Fishing Vol. 1', skill: 'Fishing' },
+    { id: 'Base.FishingBook2', name: 'Fishing Vol. 2', skill: 'Fishing' },
+    { id: 'Base.FishingBook3', name: 'Fishing Vol. 3', skill: 'Fishing' },
+    { id: 'Base.FishingBook4', name: 'Fishing Vol. 4', skill: 'Fishing' },
+    { id: 'Base.FishingBook5', name: 'Fishing Vol. 5', skill: 'Fishing' },
+    { id: 'Base.ForagingBook1', name: 'Foraging Vol. 1', skill: 'Foraging' },
+    { id: 'Base.ForagingBook2', name: 'Foraging Vol. 2', skill: 'Foraging' },
+    { id: 'Base.ForagingBook3', name: 'Foraging Vol. 3', skill: 'Foraging' },
+    { id: 'Base.ForagingBook4', name: 'Foraging Vol. 4', skill: 'Foraging' },
+    { id: 'Base.ForagingBook5', name: 'Foraging Vol. 5', skill: 'Foraging' },
+    { id: 'Base.MechanicsBook1', name: 'Mechanics Vol. 1', skill: 'Mechanics' },
+    { id: 'Base.MechanicsBook2', name: 'Mechanics Vol. 2', skill: 'Mechanics' },
+    { id: 'Base.MechanicsBook3', name: 'Mechanics Vol. 3', skill: 'Mechanics' },
+    { id: 'Base.MechanicsBook4', name: 'Mechanics Vol. 4', skill: 'Mechanics' },
+    { id: 'Base.MechanicsBook5', name: 'Mechanics Vol. 5', skill: 'Mechanics' },
+    { id: 'Base.MetalworkingBook1', name: 'Metalworking Vol. 1', skill: 'Metalworking' },
+    { id: 'Base.MetalworkingBook2', name: 'Metalworking Vol. 2', skill: 'Metalworking' },
+    { id: 'Base.MetalworkingBook3', name: 'Metalworking Vol. 3', skill: 'Metalworking' },
+    { id: 'Base.MetalworkingBook4', name: 'Metalworking Vol. 4', skill: 'Metalworking' },
+    { id: 'Base.MetalworkingBook5', name: 'Metalworking Vol. 5', skill: 'Metalworking' },
+    { id: 'Base.SprintingBook1', name: 'Sprinting Vol. 1', skill: 'Sprinting' },
+    { id: 'Base.SprintingBook2', name: 'Sprinting Vol. 2', skill: 'Sprinting' },
+    { id: 'Base.SprintingBook3', name: 'Sprinting Vol. 3', skill: 'Sprinting' },
+    { id: 'Base.SprintingBook4', name: 'Sprinting Vol. 4', skill: 'Sprinting' },
+    { id: 'Base.SprintingBook5', name: 'Sprinting Vol. 5', skill: 'Sprinting' },
+    { id: 'Base.SmallBladeBook1', name: 'Small Blade Vol. 1', skill: 'SmallBlade' },
+    { id: 'Base.SmallBladeBook2', name: 'Small Blade Vol. 2', skill: 'SmallBlade' },
+    { id: 'Base.SmallBladeBook3', name: 'Small Blade Vol. 3', skill: 'SmallBlade' },
+    { id: 'Base.SmallBladeBook4', name: 'Small Blade Vol. 4', skill: 'SmallBlade' },
+    { id: 'Base.SmallBladeBook5', name: 'Small Blade Vol. 5', skill: 'SmallBlade' },
+    { id: 'Base.BluntBook1', name: 'Blunt Vol. 1', skill: 'Blunt' },
+    { id: 'Base.BluntBook2', name: 'Blunt Vol. 2', skill: 'Blunt' },
+    { id: 'Base.BluntBook3', name: 'Blunt Vol. 3', skill: 'Blunt' },
+    { id: 'Base.BluntBook4', name: 'Blunt Vol. 4', skill: 'Blunt' },
+    { id: 'Base.BluntBook5', name: 'Blunt Vol. 5', skill: 'Blunt' },
+    { id: 'Base.AxeBook1', name: 'Axe Vol. 1', skill: 'Axe' },
+    { id: 'Base.AxeBook2', name: 'Axe Vol. 2', skill: 'Axe' },
+    { id: 'Base.AxeBook3', name: 'Axe Vol. 3', skill: 'Axe' },
+    { id: 'Base.AxeBook4', name: 'Axe Vol. 4', skill: 'Axe' },
+    { id: 'Base.AxeBook5', name: 'Axe Vol. 5', skill: 'Axe' },
+    { id: 'Base.LongBladeBook1', name: 'Long Blade Vol. 1', skill: 'LongBlade' },
+    { id: 'Base.LongBladeBook2', name: 'Long Blade Vol. 2', skill: 'LongBlade' },
+    { id: 'Base.LongBladeBook3', name: 'Long Blade Vol. 3', skill: 'LongBlade' },
+    { id: 'Base.LongBladeBook4', name: 'Long Blade Vol. 4', skill: 'LongBlade' },
+    { id: 'Base.LongBladeBook5', name: 'Long Blade Vol. 5', skill: 'LongBlade' },
+    { id: 'Base.SmallBluntBook1', name: 'Small Blunt Vol. 1', skill: 'SmallBlunt' },
+    { id: 'Base.SmallBluntBook2', name: 'Small Blunt Vol. 2', skill: 'SmallBlunt' },
+    { id: 'Base.SmallBluntBook3', name: 'Small Blunt Vol. 3', skill: 'SmallBlunt' },
+    { id: 'Base.SmallBluntBook4', name: 'Small Blunt Vol. 4', skill: 'SmallBlunt' },
+    { id: 'Base.SmallBluntBook5', name: 'Small Blunt Vol. 5', skill: 'SmallBlunt' },
+    { id: 'Base.FitnessBook1', name: 'Fitness Vol. 1', skill: 'Fitness' },
+    { id: 'Base.FitnessBook2', name: 'Fitness Vol. 2', skill: 'Fitness' },
+    { id: 'Base.FitnessBook3', name: 'Fitness Vol. 3', skill: 'Fitness' },
+    { id: 'Base.FitnessBook4', name: 'Fitness Vol. 4', skill: 'Fitness' },
+    { id: 'Base.FitnessBook5', name: 'Fitness Vol. 5', skill: 'Fitness' },
+    { id: 'Base.TailoringBook1', name: 'Tailoring Vol. 1', skill: 'Tailoring' },
+    { id: 'Base.TailoringBook2', name: 'Tailoring Vol. 2', skill: 'Tailoring' },
+    { id: 'Base.TailoringBook3', name: 'Tailoring Vol. 3', skill: 'Tailoring' },
+    { id: 'Base.TailoringBook4', name: 'Tailoring Vol. 4', skill: 'Tailoring' },
+    { id: 'Base.TailoringBook5', name: 'Tailoring Vol. 5', skill: 'Tailoring' },
+    { id: 'Base.TrappingBook1', name: 'Trapping Vol. 1', skill: 'Trapping' },
+    { id: 'Base.TrappingBook2', name: 'Trapping Vol. 2', skill: 'Trapping' },
+    { id: 'Base.TrappingBook3', name: 'Trapping Vol. 3', skill: 'Trapping' },
+    { id: 'Base.TrappingBook4', name: 'Trapping Vol. 4', skill: 'Trapping' },
+    { id: 'Base.TrappingBook5', name: 'Trapping Vol. 5', skill: 'Trapping' },
+    { id: 'Base.PassingBook1', name: 'Passing Vol. 1', skill: 'Passing' },
+    { id: 'Base.PassingBook2', name: 'Passing Vol. 2', skill: 'Passing' },
+    { id: 'Base.PassingBook3', name: 'Passing Vol. 3', skill: 'Passing' },
+    { id: 'Base.PassingBook4', name: 'Passing Vol. 4', skill: 'Passing' },
+    { id: 'Base.PassingBook5', name: 'Passing Vol. 5', skill: 'Passing' },
+  ];
+
+  const recipeMagazines = [
+    { id: 'Base.MechanicMag1', name: 'Laines Standard Auto Manual', skill: 'Mechanics' },
+    { id: 'Base.MechanicMag2', name: 'Laines Commercial Auto Manual', skill: 'Mechanics' },
+    { id: 'Base.MechanicMag3', name: 'Laines Performance Auto Manual', skill: 'Mechanics' },
+    { id: 'Base.ElectronicsMag1', name: 'Zapper!', skill: 'Electricity' },
+    { id: 'Base.ElectronicsMag2', name: 'Like Clockwork', skill: 'Electricity' },
+    { id: 'Base.ElectronicsMag3', name: 'Home Security Monthly', skill: 'Electricity' },
+    { id: 'Base.ElectronicsMag4', name: 'How to Use Generators', skill: 'Electricity' },
+    { id: 'Base.ElectronicsMag5', name: 'Sparky\'s Lighting Guide', skill: 'Electricity' },
+    { id: 'Base.EngineerMagazine1', name: 'Real Spy Secrets - June 1993', skill: 'Electricity' },
+    { id: 'Base.EngineerMagazine2', name: 'The Cheapskate\'s John - Chemical Warfare', skill: 'Electricity' },
+    { id: 'Base.EngineerMagazine3', name: 'The Cheapskate\'s John - Homemade Explosives', skill: 'Electricity' },
+    { id: 'Base.SmithingMag1', name: 'Everyday Smithing - April 1993', skill: 'Metalworking' },
+    { id: 'Base.SmithingMag2', name: 'Everyday Smithing - May 1993', skill: 'Metalworking' },
+    { id: 'Base.SmithingMag3', name: 'Everyday Smithing - June 1993', skill: 'Metalworking' },
+    { id: 'Base.SmithingMag4', name: 'Small-Scale Smithing', skill: 'Metalworking' },
+    { id: 'Base.SmithingMag5', name: 'Blunt Forge', skill: 'Metalworking' },
+    { id: 'Base.SmithingMag6', name: 'Modern Metalworking at Home', skill: 'Metalworking' },
+    { id: 'Base.SmithingMag7', name: 'Medieval Armory - June 1993', skill: 'Metalworking' },
+    { id: 'Base.SmithingMag8', name: 'American Bladecraft', skill: 'Metalworking' },
+    { id: 'Base.SmithingMag9', name: 'Iron Age Metalworking', skill: 'Metalworking' },
+    { id: 'Base.SmithingMag10', name: 'Medieval Metalworking', skill: 'Metalworking' },
+    { id: 'Base.SmithingMag11', name: 'Medieval Armory - May 1993', skill: 'Metalworking' },
+    { id: 'Base.MetalworkMag1', name: 'Welder Monthly - June 1993', skill: 'Metalworking' },
+    { id: 'Base.MetalworkMag2', name: 'Welder Monthly - May 1993', skill: 'Metalworking' },
+    { id: 'Base.MetalworkMag3', name: 'Welder Monthly - April 1993', skill: 'Metalworking' },
+    { id: 'Base.MetalworkMag4', name: 'Welder Monthly - March 1993', skill: 'Metalworking' },
+    { id: 'Base.GlassmakingMag1', name: 'Murano Glass Manual', skill: 'Glassworking' },
+    { id: 'Base.GlassmakingMag2', name: 'Carlow Crystal Guide', skill: 'Glassworking' },
+    { id: 'Base.GlassmakingMag3', name: 'Bottle Making at Home', skill: 'Glassworking' },
+    { id: 'Base.CookingMag1', name: 'Good Cooking - June 1993', skill: 'Cooking' },
+    { id: 'Base.CookingMag2', name: 'Good Cooking - May 1993', skill: 'Cooking' },
+    { id: 'Base.CookingMag3', name: 'Italian Delights', skill: 'Cooking' },
+    { id: 'Base.CookingMag4', name: 'Grandma\'s Kitchen', skill: 'Cooking' },
+    { id: 'Base.CookingMag5', name: 'World Cooking', skill: 'Cooking' },
+    { id: 'Base.CookingMag6', name: 'Delicious Meals - June 1993', skill: 'Cooking' },
+    { id: 'Base.FarmingMag1', name: 'Kentucky Farmer - June 1993', skill: 'Agriculture' },
+    { id: 'Base.FarmingMag2', name: 'Kentucky Farmer - May 1993', skill: 'Agriculture' },
+    { id: 'Base.FarmingMag3', name: 'Blooms and Blossoms', skill: 'Agriculture' },
+    { id: 'Base.FarmingMag4', name: 'The Farmers Guide', skill: 'Agriculture' },
+    { id: 'Base.FarmingMag5', name: 'American Homesteading', skill: 'Agriculture' },
+    { id: 'Base.FarmingMag6', name: 'Cropping for Cash', skill: 'Agriculture' },
+    { id: 'Base.FarmingMag7', name: 'Growing Your Own', skill: 'Agriculture' },
+    { id: 'Base.FarmingMag8', name: 'Thyme Time', skill: 'Agriculture' },
+    { id: 'Base.FarmingMag9', name: 'Herbal Remedy Growing', skill: 'Agriculture' },
+    { id: 'Base.HempMag1', name: 'Legalize It!', skill: 'Agriculture' },
+    { id: 'Base.FishingMag1', name: 'Angler USA - June 1993', skill: 'Fishing' },
+    { id: 'Base.FishingMag2', name: 'Angler USA - May 1993', skill: 'Fishing' },
+    { id: 'Base.HuntingMag1', name: 'Small Game Hunting', skill: 'Trapping' },
+    { id: 'Base.HuntingMag2', name: 'The Hunter', skill: 'Trapping' },
+    { id: 'Base.HuntingMag3', name: 'Wildlife Preserve', skill: 'Trapping' },
+    { id: 'Base.HuntingMag4', name: 'Get Stuffed', skill: 'Trapping' },
+    { id: 'Base.TailoringMag1', name: 'Ancient Tailoring', skill: 'Tailoring' },
+    { id: 'Base.TailoringMag2', name: 'Punk Fashion', skill: 'Tailoring' },
+    { id: 'Base.TailoringMag3', name: 'Medieval Peasant Clothing', skill: 'Tailoring' },
+    { id: 'Base.TailoringMag4', name: 'Leather Crafts', skill: 'Tailoring' },
+    { id: 'Base.TailoringMag5', name: 'Cowboy Living', skill: 'Tailoring' },
+    { id: 'Base.TailoringMag6', name: 'Real Gladiators', skill: 'Tailoring' },
+    { id: 'Base.TailoringMag7', name: 'Fun in the Woods!', skill: 'Tailoring' },
+    { id: 'Base.TailoringMag8', name: 'Outdoor Gear, Done Right', skill: 'Tailoring' },
+    { id: 'Base.TailoringMag9', name: 'Alpine Explorers', skill: 'Tailoring' },
+    { id: 'Base.TailoringMag10', name: 'Homespun', skill: 'Tailoring' },
+    { id: 'Base.KnittingMag1', name: 'Woolly Yarns - June 1993', skill: 'Tailoring' },
+    { id: 'Base.KnittingMag2', name: 'Woolly Yarns - May 1993', skill: 'Tailoring' },
+    { id: 'Base.ArmorMag1', name: 'Outfit Apocalypse', skill: 'Combat' },
+    { id: 'Base.ArmorMag2', name: 'Early Indigenous Armor', skill: 'Combat' },
+    { id: 'Base.ArmorMag3', name: 'Secrets of the Outback Outlaws', skill: 'Combat' },
+    { id: 'Base.ArmorMag4', name: 'European Armor Late Medieval', skill: 'Combat' },
+    { id: 'Base.ArmorMag5', name: 'Armor in the Iron Age', skill: 'Combat' },
+    { id: 'Base.ArmorMag6', name: 'Strange Histories - Siberian Bears', skill: 'Combat' },
+    { id: 'Base.ArmorMag7', name: 'FBI Incident Report: SF Bank', skill: 'Combat' },
+    { id: 'Base.WeaponMag1', name: 'The First Weapons', skill: 'Combat' },
+    { id: 'Base.WeaponMag2', name: 'No Man\'s Land', skill: 'Combat' },
+    { id: 'Base.WeaponMag3', name: 'The Cheapskate\'s John - Prison Def', skill: 'Combat' },
+    { id: 'Base.WeaponMag4', name: 'Bloody Japanese Wrestling!', skill: 'Combat' },
+    { id: 'Base.WeaponMag5', name: 'The Cheapskate\'s John - Street Viol', skill: 'Combat' },
+    { id: 'Base.WeaponMag6', name: 'Revolting Peasants', skill: 'Combat' },
+    { id: 'Base.WeaponMag7', name: 'The Louisville Bruiser', skill: 'Combat' },
+    { id: 'Base.HerbalistMag', name: 'Wilderness Survival', skill: 'Foraging' },
+    { id: 'Base.PrimitiveToolMag1', name: 'Tool Use of Early Man', skill: 'Foraging' },
+    { id: 'Base.PrimitiveToolMag2', name: 'Cultures of Prehistory', skill: 'Foraging' },
+    { id: 'Base.PrimitiveToolMag3', name: 'Pioneering Carvers', skill: 'Foraging' },
+    { id: 'Base.RadioMag1', name: 'Guerilla Radio - June 1993', skill: 'Electricity' },
+    { id: 'Base.RadioMag2', name: 'Sparky\'s Radio Guide', skill: 'Electricity' },
+    { id: 'Base.RadioMag3', name: 'Guerilla Radio - May 1993', skill: 'Electricity' },
+    { id: 'Base.TrickMag1', name: 'Real Spy Secrets - May 1993', skill: 'Tricks' },
+    { id: 'Base.TrickMag2', name: 'The Cheapskate\'s John - New IDs', skill: 'Tricks' },
+    { id: 'Base.KeyMag1', name: 'The Cheapskate\'s John - Escaping', skill: 'Tricks' },
+  ];
+
+  const retailMovies = [
+    { id: 'Base.RetailVHS_BreakingPoints', name: 'Breaking Points', is_skill_related: false },
+    { id: 'Base.RetailVHS_ManOnTheRun', name: 'Man on the Run', is_skill_related: false },
+    { id: 'Base.RetailVHS_PleistoceneLand', name: 'Pleistocene Land', is_skill_related: false },
+    { id: 'Base.RetailVHS_EagleDown', name: 'Eagle Down', is_skill_related: false },
+    { id: 'Base.RetailVHS_HomeInvaders2', name: 'Home Invaders 2', is_skill_related: false },
+    { id: 'Base.RetailVHS_BloodInTheHood', name: 'Blood in the Hood', is_skill_related: false },
+    { id: 'Base.RetailVHS_LivesTaken', name: 'Lives Taken', is_skill_related: false },
+    { id: 'Base.RetailVHS_SordidClient', name: 'Sordid Client', is_skill_related: false },
+    { id: 'Base.RetailVHS_DimeDiamonds', name: 'Dime Diamonds', is_skill_related: false },
+    { id: 'Base.RetailVHS_SatinAndSilk', name: 'Satin and Silk', is_skill_related: false },
+    { id: 'Base.RetailVHS_ThreeDeathsAndDivorce', name: 'Three Deaths and a Divorce', is_skill_related: false },
+    { id: 'Base.RetailVHS_TrainBomb', name: 'Train Bomb', is_skill_related: false },
+    { id: 'Base.RetailVHS_YouAreDead', name: 'You Are Dead', is_skill_related: false },
+    { id: 'Base.RetailVHS_WarFront', name: 'War Front', is_skill_related: false },
+    { id: 'Base.RetailVHS_AllOverAgain', name: 'All Over Again', is_skill_related: false },
+    { id: 'Base.RetailVHS_CyberKiller2', name: 'CyberKiller 2', is_skill_related: false },
+    { id: 'Base.RetailVHS_StrangeLittleMen', name: 'Strange Little Men', is_skill_related: false },
+    { id: 'Base.RetailVHS_OperationFortKnox', name: 'Operation Fort Knox', is_skill_related: false },
+    { id: 'Base.RetailVHS_DyingStrike', name: 'Dying Strike', is_skill_related: false },
+    { id: 'Base.RetailVHS_MarriageLicense', name: 'Marriage License', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheCryingOfFoxes', name: 'The Crying of Foxes', is_skill_related: false },
+    { id: 'Base.RetailVHS_CosaNostra', name: 'Cosa Nostra', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheDangerInYourBed', name: 'The Danger in Your Bed', is_skill_related: false },
+    { id: 'Base.RetailVHS_Loveheart', name: 'Loveheart', is_skill_related: false },
+    { id: 'Base.RetailVHS_SquadDown', name: 'Squad Down', is_skill_related: false },
+    { id: 'Base.RetailVHS_ReturnOfNightwatcher', name: 'Return of Nightwatcher', is_skill_related: false },
+    { id: 'Base.RetailVHS_FredAndAliRadicalJourney', name: 'Fred and Ali Radical Journey', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheJanitor', name: 'The Janitor', is_skill_related: false },
+    { id: 'Base.RetailVHS_SurvivalInstinct', name: 'Survival Instinct', is_skill_related: false },
+    { id: 'Base.RetailVHS_GlobalWarrior', name: 'Global Warrior', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheDogGoblin', name: 'The Dog Goblin', is_skill_related: false },
+    { id: 'Base.RetailVHS_DogGoblin2', name: 'Dog Goblin II', is_skill_related: false },
+    { id: 'Base.RetailVHS_DogGoblin3', name: 'Dog Goblin III', is_skill_related: false },
+    { id: 'Base.RetailVHS_DogGoblin4', name: 'Dog Goblin IV', is_skill_related: false },
+    { id: 'Base.RetailVHS_GhoulStoppers', name: 'Ghoul Stoppers', is_skill_related: false },
+    { id: 'Base.RetailVHS_SlowDescent', name: 'Slow Descent', is_skill_related: false },
+    { id: 'Base.RetailVHS_DarkAgent', name: 'Dark Agent', is_skill_related: false },
+    { id: 'Base.RetailVHS_TimebergManor', name: 'Timeberg Manor', is_skill_related: false },
+    { id: 'Base.RetailVHS_AcePilot', name: 'Ace Pilot', is_skill_related: false },
+    { id: 'Base.RetailVHS_TiredInToronto', name: 'Tired in Toronto', is_skill_related: false },
+    { id: 'Base.RetailVHS_DeadWrong', name: 'Dead Wrong', is_skill_related: false, skill: 'SmallBlade' },
+    { id: 'Base.RetailVHS_MothersBoy', name: "Mother's Boy", is_skill_related: false, skill: 'SmallBlade' },
+    { id: 'Base.RetailVHS_Tangier', name: 'Tangier', is_skill_related: false },
+    { id: 'Base.RetailVHS_MollyBrown', name: 'Molly Brown', is_skill_related: false },
+    { id: 'Base.RetailVHS_ParisInTheRain', name: 'Paris in the Rain', is_skill_related: false },
+  ];
+
+  const tvShows = [
+    { id: 'Base.RetailVHS_WashingtonHighS5E1', name: 'Washington High S5.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_WashingtonHighS5E2', name: 'Washington High S5.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_WashingtonHighS5E3', name: 'Washington High S5.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_WashingtonHighS5E4', name: 'Washington High S5.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_WashingtonHighS5E5', name: 'Washington High S5.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_StrangelyTrueS2E1', name: 'Strangely True S2.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_StrangelyTrueS2E2', name: 'Strangely True S2.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_StrangelyTrueS2E3', name: 'Strangely True S2.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_StrangelyTrueS2E4', name: 'Strangely True S2.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_StrangelyTrueS2E5', name: 'Strangely True S2.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_BallincoolinS1E1', name: 'Ballincoolin S1.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_BallincoolinS1E2', name: 'Ballincoolin S1.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_BallincoolinS1E3', name: 'Ballincoolin S1.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_BallincoolinS1E4', name: 'Ballincoolin S1.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_BallincoolinS1E5', name: 'Ballincoolin S1.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_SpaceCrewS3E1', name: 'Space Crew S3.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_SpaceCrewS3E2', name: 'Space Crew S3.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_SpaceCrewS3E3', name: 'Space Crew S3.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_SpaceCrewS3E4', name: 'Space Crew S3.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_SpaceCrewS3E5', name: 'Space Crew S3.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheModeratorsS2E1', name: 'The Moderators S2.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheModeratorsS2E2', name: 'The Moderators S2.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheModeratorsS2E3', name: 'The Moderators S2.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheModeratorsS2E4', name: 'The Moderators S2.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheModeratorsS2E5', name: 'The Moderators S2.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheMagicalWoodlandE1', name: 'The Magical Woodland E1', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheMagicalWoodlandE2', name: 'The Magical Woodland E2', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheMagicalWoodlandE3', name: 'The Magical Woodland E3', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheMagicalWoodlandE4', name: 'The Magical Woodland E4', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheMagicalWoodlandE5', name: 'The Magical Woodland E5', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDeptS3E1', name: 'The Omega Department S3.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDeptS3E2', name: 'The Omega Department S3.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDeptS3E3', name: 'The Omega Department S3.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDeptS3E4', name: 'The Omega Department S3.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDeptS3E5', name: 'The Omega Department S3.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDeptS5E1', name: 'The Omega Department S5.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDeptS5E2', name: 'The Omega Department S5.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDeptS5E3', name: 'The Omega Department S5.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDeptS5E4', name: 'The Omega Department S5.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDeptS5E5', name: 'The Omega Department S5.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_AlbertWellenQCS2E1', name: 'Albert Wellen QC S2.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_AlbertWellenQCS2E2', name: 'Albert Wellen QC S2.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_AlbertWellenQCS2E3', name: 'Albert Wellen QC S2.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_AlbertWellenQCS2E4', name: 'Albert Wellen QC S2.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_AlbertWellenQCS2E5', name: 'Albert Wellen QC S2.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_ZSquadS2E1', name: 'Z-Squad S2.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_ZSquadS2E2', name: 'Z-Squad S2.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_ZSquadS2E3', name: 'Z-Squad S2.03', is_skill_related: false, skill: 'Mechanics' },
+    { id: 'Base.RetailVHS_ZSquadS2E4', name: 'Z-Squad S2.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_ZSquadS2E5', name: 'Z-Squad S2.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheThompsonsS3E1', name: 'The Thompsons S3.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheThompsonsS3E2', name: 'The Thompsons S3.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheThompsonsS3E3', name: 'The Thompsons S3.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheThompsonsS3E4', name: 'The Thompsons S3.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheThompsonsS3E5', name: 'The Thompsons S3.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_DeadWrongS2E1', name: 'Dead Wrong S2.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_DeadWrongS2E2', name: 'Dead Wrong S2.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_DeadWrongS2E3', name: 'Dead Wrong S2.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_DeadWrongS2E4', name: 'Dead Wrong S2.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_DeadWrongS2E5', name: 'Dead Wrong S2.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheCookShowE1', name: 'The Cook Show E1', is_skill_related: true, skill: 'Cooking' },
+    { id: 'Base.RetailVHS_TheCookShowE2', name: 'The Cook Show E2', is_skill_related: true, skill: 'Cooking' },
+    { id: 'Base.RetailVHS_TheCookShowE3', name: 'The Cook Show E3', is_skill_related: true, skill: 'Cooking' },
+    { id: 'Base.RetailVHS_TheCookShowE4', name: 'The Cook Show E4', is_skill_related: true, skill: 'Cooking' },
+    { id: 'Base.RetailVHS_TheCookShowE5', name: 'The Cook Show E5', is_skill_related: true, skill: 'Cooking' },
+    { id: 'Base.RetailVHS_TheCookShowE6', name: 'The Cook Show E6', is_skill_related: true, skill: 'Cooking' },
+  ];
+
+  const tvShowsWithXP = [
+    { id: 'Base.RetailVHS_ZSquadS2E3', name: 'Z-Squad S2.03', is_skill_related: true, skill: 'Mechanics' },
+    { id: 'Base.RetailVHS_TheCookShowE1', name: 'The Cook Show E1', is_skill_related: true, skill: 'Cooking' },
+    { id: 'Base.RetailVHS_TheCookShowE2', name: 'The Cook Show E2', is_skill_related: true, skill: 'Cooking' },
+    { id: 'Base.RetailVHS_TheCookShowE3', name: 'The Cook Show E3', is_skill_related: true, skill: 'Cooking' },
+    { id: 'Base.RetailVHS_TheCookShowE4', name: 'The Cook Show E4', is_skill_related: true, skill: 'Cooking' },
+    { id: 'Base.RetailVHS_TheCookShowE5', name: 'The Cook Show E5', is_skill_related: true, skill: 'Cooking' },
+    { id: 'Base.RetailVHS_TheCookShowE6', name: 'The Cook Show E6', is_skill_related: true, skill: 'Cooking' },
+  ];
+
+  const tvShowsNoXP = [
+    { id: 'Base.RetailVHS_WashingtonHighS5E1', name: 'Washington High S5.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_WashingtonHighS5E2', name: 'Washington High S5.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_WashingtonHighS5E3', name: 'Washington High S5.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_WashingtonHighS5E4', name: 'Washington High S5.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_WashingtonHighS5E5', name: 'Washington High S5.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_StrangelyTrueS2E1', name: 'Strangely True S2.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_StrangelyTrueS2E2', name: 'Strangely True S2.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_StrangelyTrueS2E3', name: 'Strangely True S2.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_StrangelyTrueS2E4', name: 'Strangely True S2.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_StrangelyTrueS2E5', name: 'Strangely True S2.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_BallincoolinS1E1', name: 'Ballincoolin S1.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_BallincoolinS1E2', name: 'Ballincoolin S1.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_BallincoolinS1E3', name: 'Ballincoolin S1.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_BallincoolinS1E4', name: 'Ballincoolin S1.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_BallincoolinS1E5', name: 'Ballincoolin S1.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_SpaceCrewS3E1', name: 'Space Crew S3.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_SpaceCrewS3E2', name: 'Space Crew S3.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_SpaceCrewS3E3', name: 'Space Crew S3.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_SpaceCrewS3E4', name: 'Space Crew S3.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_SpaceCrewS3E5', name: 'Space Crew S3.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheModeratorsS2E1', name: 'The Moderators S2.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheModeratorsS2E2', name: 'The Moderators S2.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheModeratorsS2E3', name: 'The Moderators S2.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheModeratorsS2E4', name: 'The Moderators S2.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheModeratorsS2E5', name: 'The Moderators S2.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheMagicalWoodlandE1', name: 'The Magical Woodland E1', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheMagicalWoodlandE2', name: 'The Magical Woodland E2', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheMagicalWoodlandE3', name: 'The Magical Woodland E3', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheMagicalWoodlandE4', name: 'The Magical Woodland E4', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheMagicalWoodlandE5', name: 'The Magical Woodland E5', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDepartmentS3E1', name: 'The Omega Department S3.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDepartmentS3E2', name: 'The Omega Department S3.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDepartmentS3E3', name: 'The Omega Department S3.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDepartmentS3E4', name: 'The Omega Department S3.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDepartmentS3E5', name: 'The Omega Department S3.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDepartmentS5E1', name: 'The Omega Department S5.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDepartmentS5E2', name: 'The Omega Department S5.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDepartmentS5E3', name: 'The Omega Department S5.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDepartmentS5E4', name: 'The Omega Department S5.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDepartmentS5E5', name: 'The Omega Department S5.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_AlbertWellenQCS2E1', name: 'Albert Wellen QC S2.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_AlbertWellenQCS2E2', name: 'Albert Wellen QC S2.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_AlbertWellenQCS2E3', name: 'Albert Wellen QC S2.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_AlbertWellenQCS2E4', name: 'Albert Wellen QC S2.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_AlbertWellenQCS2E5', name: 'Albert Wellen QC S2.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheThompsonS3E1', name: 'The Thompsons S3.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheThompsonS3E2', name: 'The Thompsons S3.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheThompsonS3E3', name: 'The Thompsons S3.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheThompsonS3E4', name: 'The Thompsons S3.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheThompsonS3E5', name: 'The Thompsons S3.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_DeadWrongS2E1', name: 'Dead Wrong S2.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_DeadWrongS2E2', name: 'Dead Wrong S2.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_DeadWrongS2E3', name: 'Dead Wrong S2.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_DeadWrongS2E4', name: 'Dead Wrong S2.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_DeadWrongS2E5', name: 'Dead Wrong S2.05', is_skill_related: false },
+  ];
+
+  const woodcraftShows = [
+    { id: 'Base.HomeVHS_WoodcraftE1', name: 'Woodcraft E1', is_skill_related: true, skill: 'Carpentry' },
+    { id: 'Base.HomeVHS_WoodcraftE2', name: 'Woodcraft E2', is_skill_related: true, skill: 'Carpentry' },
+    { id: 'Base.HomeVHS_WoodcraftE3', name: 'Woodcraft E3', is_skill_related: true, skill: 'Carpentry' },
+    { id: 'Base.HomeVHS_WoodcraftE4', name: 'Woodcraft E4', is_skill_related: true, skill: 'Carpentry' },
+    { id: 'Base.HomeVHS_WoodcraftE5', name: 'Woodcraft E5', is_skill_related: true, skill: 'Carpentry' },
+    { id: 'Base.HomeVHS_WoodcraftE6', name: 'Woodcraft E6', is_skill_related: true, skill: 'Carpentry' },
+    { id: 'Base.HomeVHS_WoodcraftE7', name: 'Woodcraft E7', is_skill_related: true, skill: 'Carpentry' },
+  ];
+
+  const survivalShows = [
+    { id: 'Base.HomeVHS_ExposureSurvivalE4', name: 'Exposure Survival E4', is_skill_related: true, skill: 'Farming' },
+    { id: 'Base.HomeVHS_ExposureSurvivalE5', name: 'Exposure Survival E5', is_skill_related: true, skill: 'Farming' },
+    { id: 'Base.HomeVHS_ExposureSurvivalE6', name: 'Exposure Survival E6', is_skill_related: true, skill: 'Farming' },
+    { id: 'Base.HomeVHS_ExposureSurvivalE7', name: 'Exposure Survival E7', is_skill_related: true, skill: 'Farming' },
+    { id: 'Base.HomeVHS_ExposureSurvivalE8', name: 'Exposure Survival E8', is_skill_related: true, skill: 'Farming' },
+  ];
+
+  const fitnessShows = [
+    { id: 'Base.HomeVHS_OSCC92', name: 'OSCC \'92', is_skill_related: true, skill: 'Sprinting' },
+    { id: 'Base.HomeVHS_StockCars', name: 'Stock Cars', is_skill_related: true, skill: 'Sprinting' },
+  ];
+
+  const tvShowsWithXP = [
+    { id: 'Base.RetailVHS_ZSquadS2E3', name: 'Z-Squad S2.03', is_skill_related: true, skill: 'Mechanics' },
+    { id: 'Base.RetailVHS_TheCookShowE1', name: 'The Cook Show E1', is_skill_related: true, skill: 'Cooking' },
+    { id: 'Base.RetailVHS_TheCookShowE2', name: 'The Cook Show E2', is_skill_related: true, skill: 'Cooking' },
+    { id: 'Base.RetailVHS_TheCookShowE3', name: 'The Cook Show E3', is_skill_related: true, skill: 'Cooking' },
+    { id: 'Base.RetailVHS_TheCookShowE4', name: 'The Cook Show E4', is_skill_related: true, skill: 'Cooking' },
+    { id: 'Base.RetailVHS_TheCookShowE5', name: 'The Cook Show E5', is_skill_related: true, skill: 'Cooking' },
+    { id: 'Base.RetailVHS_TheCookShowE6', name: 'The Cook Show E6', is_skill_related: true, skill: 'Cooking' },
+  ];
+
+  const tvShowsNoXP = [
+    { id: 'Base.RetailVHS_WashingtonHighS5E1', name: 'Washington High S5.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_WashingtonHighS5E2', name: 'Washington High S5.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_WashingtonHighS5E3', name: 'Washington High S5.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_WashingtonHighS5E4', name: 'Washington High S5.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_WashingtonHighS5E5', name: 'Washington High S5.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_StrangelyTrueS2E1', name: 'Strangely True S2.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_StrangelyTrueS2E2', name: 'Strangely True S2.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_StrangelyTrueS2E3', name: 'Strangely True S2.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_StrangelyTrueS2E4', name: 'Strangely True S2.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_StrangelyTrueS2E5', name: 'Strangely True S2.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_BallincoolinS1E1', name: 'Ballincoolin S1.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_BallincoolinS1E2', name: 'Ballincoolin S1.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_BallincoolinS1E3', name: 'Ballincoolin S1.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_BallincoolinS1E4', name: 'Ballincoolin S1.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_BallincoolinS1E5', name: 'Ballincoolin S1.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_SpaceCrewS3E1', name: 'Space Crew S3.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_SpaceCrewS3E2', name: 'Space Crew S3.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_SpaceCrewS3E3', name: 'Space Crew S3.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_SpaceCrewS3E4', name: 'Space Crew S3.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_SpaceCrewS3E5', name: 'Space Crew S3.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheModeratorsS2E1', name: 'The Moderators S2.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheModeratorsS2E2', name: 'The Moderators S2.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheModeratorsS2E3', name: 'The Moderators S2.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheModeratorsS2E4', name: 'The Moderators S2.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheModeratorsS2E5', name: 'The Moderators S2.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheMagicalWoodlandE1', name: 'The Magical Woodland E1', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheMagicalWoodlandE2', name: 'The Magical Woodland E2', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheMagicalWoodlandE3', name: 'The Magical Woodland E3', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheMagicalWoodlandE4', name: 'The Magical Woodland E4', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheMagicalWoodlandE5', name: 'The Magical Woodland E5', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDepartmentS3E1', name: 'The Omega Department S3.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDepartmentS3E2', name: 'The Omega Department S3.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDepartmentS3E3', name: 'The Omega Department S3.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDepartmentS3E4', name: 'The Omega Department S3.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDepartmentS3E5', name: 'The Omega Department S3.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDepartmentS5E1', name: 'The Omega Department S5.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDepartmentS5E2', name: 'The Omega Department S5.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDepartmentS5E3', name: 'The Omega Department S5.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDepartmentS5E4', name: 'The Omega Department S5.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheOmegaDepartmentS5E5', name: 'The Omega Department S5.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_AlbertWellenQCS2E1', name: 'Albert Wellen QC S2.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_AlbertWellenQCS2E2', name: 'Albert Wellen QC S2.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_AlbertWellenQCS2E3', name: 'Albert Wellen QC S2.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_AlbertWellenQCS2E4', name: 'Albert Wellen QC S2.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_AlbertWellenQCS2E5', name: 'Albert Wellen QC S2.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheThompsonS3E1', name: 'The Thompsons S3.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheThompsonS3E2', name: 'The Thompsons S3.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheThompsonS3E3', name: 'The Thompsons S3.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheThompsonS3E4', name: 'The Thompsons S3.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheThompsonS3E5', name: 'The Thompsons S3.05', is_skill_related: false },
+    { id: 'Base.RetailVHS_DeadWrongS2E1', name: 'Dead Wrong S2.01', is_skill_related: false },
+    { id: 'Base.RetailVHS_DeadWrongS2E2', name: 'Dead Wrong S2.02', is_skill_related: false },
+    { id: 'Base.RetailVHS_DeadWrongS2E3', name: 'Dead Wrong S2.03', is_skill_related: false },
+    { id: 'Base.RetailVHS_DeadWrongS2E4', name: 'Dead Wrong S2.04', is_skill_related: false },
+    { id: 'Base.RetailVHS_DeadWrongS2E5', name: 'Dead Wrong S2.05', is_skill_related: false },
+  ];
+
+  const woodcraftShows = [
+    { id: 'Base.HomeVHS_WoodcraftE1', name: 'Woodcraft E1', is_skill_related: true, skill: 'Carpentry' },
+    { id: 'Base.HomeVHS_WoodcraftE2', name: 'Woodcraft E2', is_skill_related: true, skill: 'Carpentry' },
+    { id: 'Base.HomeVHS_WoodcraftE3', name: 'Woodcraft E3', is_skill_related: true, skill: 'Carpentry' },
+    { id: 'Base.HomeVHS_WoodcraftE4', name: 'Woodcraft E4', is_skill_related: true, skill: 'Carpentry' },
+    { id: 'Base.HomeVHS_WoodcraftE5', name: 'Woodcraft E5', is_skill_related: true, skill: 'Carpentry' },
+    { id: 'Base.HomeVHS_WoodcraftE6', name: 'Woodcraft E6', is_skill_related: true, skill: 'Carpentry' },
+    { id: 'Base.HomeVHS_WoodcraftE7', name: 'Woodcraft E7', is_skill_related: true, skill: 'Carpentry' },
+  ];
+
+  const survivalShows = [
+    { id: 'Base.HomeVHS_ExposureSurvivalE4', name: 'Exposure Survival E4', is_skill_related: true, skill: 'Farming' },
+    { id: 'Base.HomeVHS_ExposureSurvivalE5', name: 'Exposure Survival E5', is_skill_related: true, skill: 'Farming' },
+    { id: 'Base.HomeVHS_ExposureSurvivalE6', name: 'Exposure Survival E6', is_skill_related: true, skill: 'Farming' },
+    { id: 'Base.HomeVHS_ExposureSurvivalE7', name: 'Exposure Survival E7', is_skill_related: true, skill: 'Farming' },
+    { id: 'Base.HomeVHS_ExposureSurvivalE8', name: 'Exposure Survival E8', is_skill_related: true, skill: 'Farming' },
+  ];
+
+  const fitnessShows = [
+    { id: 'Base.HomeVHS_OSCC92', name: 'OSCC \'92', is_skill_related: true, skill: 'Sprinting' },
+    { id: 'Base.HomeVHS_StockCars', name: 'Stock Cars', is_skill_related: true, skill: 'Sprinting' },
+  ];
+
+  const comicsAndPapers = [
+    { id: 'Base.HomeVHS_GrannyNani', name: 'Granny Nani', is_skill_related: false },
+    { id: 'Base.HomeVHS_MuldraughAVClub', name: 'Muldraugh AV Club', is_skill_related: false },
+    { id: 'Base.HomeVHS_TVRepair', name: 'TV Repair', is_skill_related: false },
+    { id: 'Base.HomeVHS_RMFA', name: 'RMFA', is_skill_related: false },
+    { id: 'Base.HomeVHS_CombatWoundMgmt', name: 'Combat Wound Management', is_skill_related: false },
+    { id: 'Base.HomeVHS_GradyvKing', name: 'Grady v King', is_skill_related: false },
+    { id: 'Base.HomeVHS_TreePlantingGuide', name: 'Tree Planting Guide', is_skill_related: false },
+    { id: 'Base.HomeVHS_MechanicalQuadratics', name: 'Mechanical Quadratics', is_skill_related: false },
+    { id: 'Base.HomeVHS_BasicGunHandling', name: 'Basic Gun Handling', is_skill_related: false },
+  ];
+
+  const vhsTapes = [
+    { id: 'Base.HomeVHS_Exercise', name: 'Home VHS - Exercise', skill: 'Fitness', is_skill_related: true },
+    { id: 'Base.HomeVHS_Carpentary', name: 'Home VHS - Carpentry', skill: 'Carpentry', is_skill_related: true },
+    { id: 'Base.HomeVHS_Cooking', name: 'Home VHS - Cooking', skill: 'Cooking', is_skill_related: true },
+    { id: 'Base.HomeVHS_Farming', name: 'Home VHS - Farming', skill: 'Agriculture', is_skill_related: true },
+    { id: 'Base.HomeVHS_Fishing', name: 'Home VHS - Fishing', skill: 'Fishing', is_skill_related: true },
+    { id: 'Base.HomeVHS_Medical', name: 'Home VHS - Medical', skill: 'Doctor', is_skill_related: true },
+  ];
+
+  const retailMovies = [
+    { id: 'Base.RetailVHS_BreakingPoints', name: 'Breaking Points', is_skill_related: false },
+    { id: 'Base.RetailVHS_ManOnTheRun', name: 'Man on the Run', is_skill_related: false },
+    { id: 'Base.RetailVHS_PleistoceneLand', name: 'Pleistocene Land', is_skill_related: false },
+    { id: 'Base.RetailVHS_EagleDown', name: 'Eagle Down', is_skill_related: false },
+    { id: 'Base.RetailVHS_HomeInvaders2', name: 'Home Invaders 2', is_skill_related: false },
+    { id: 'Base.RetailVHS_BloodInTheHood', name: 'Blood in the Hood', is_skill_related: false },
+    { id: 'Base.RetailVHS_LivesTaken', name: 'Lives Taken', is_skill_related: false },
+    { id: 'Base.RetailVHS_SordidClient', name: 'Sordid Client', is_skill_related: false },
+    { id: 'Base.RetailVHS_DimeDiamonds', name: 'Dime Diamonds', is_skill_related: false },
+    { id: 'Base.RetailVHS_SatinAndSilk', name: 'Satin and Silk', is_skill_related: false },
+    { id: 'Base.RetailVHS_ThreeDeathsAndDivorce', name: 'Three Deaths and a Divorce', is_skill_related: false },
+    { id: 'Base.RetailVHS_TrainBomb', name: 'Train Bomb', is_skill_related: false },
+    { id: 'Base.RetailVHS_YouAreDead', name: 'You Are Dead', is_skill_related: false },
+    { id: 'Base.RetailVHS_WarFront', name: 'War Front', is_skill_related: false },
+    { id: 'Base.RetailVHS_AllOverAgain', name: 'All Over Again', is_skill_related: false },
+    { id: 'Base.RetailVHS_CyberKiller2', name: 'Cyberkiller 2', is_skill_related: false },
+    { id: 'Base.RetailVHS_StrangeLittleMen', name: 'Strange Little Men', is_skill_related: false },
+    { id: 'Base.RetailVHS_OperationFortKnox', name: 'Operation Fort Knox', is_skill_related: false },
+    { id: 'Base.RetailVHS_DyingStrike', name: 'Dying Strike', is_skill_related: false },
+    { id: 'Base.RetailVHS_MarriageLicense', name: 'Marriage License', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheCryingOfFoxes', name: 'The Crying of Foxes', is_skill_related: false },
+    { id: 'Base.RetailVHS_CosaNostra', name: 'Cosa Nostra', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheDangerInYourBed', name: 'The Danger in Your Bed', is_skill_related: false },
+    { id: 'Base.RetailVHS_Loveheart', name: 'Loveheart', is_skill_related: false },
+    { id: 'Base.RetailVHS_SquadDown', name: 'Squad Down', is_skill_related: false },
+    { id: 'Base.RetailVHS_ReturnOfNightwatcher', name: 'Return of Nightwatcher', is_skill_related: false },
+    { id: 'Base.RetailVHS_FredAndAliRadicalJourney', name: 'Fred and Ali Radical Journey', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheJanitor', name: 'The Janitor', is_skill_related: false },
+    { id: 'Base.RetailVHS_SurvivalInstinct', name: 'Survival Instinct', is_skill_related: false },
+    { id: 'Base.RetailVHS_GlobalWarrior', name: 'Global Warrior', is_skill_related: false },
+    { id: 'Base.RetailVHS_TheDogGoblin', name: 'The Dog Goblin', is_skill_related: false },
+    { id: 'Base.RetailVHS_DogGoblin2', name: 'Dog Goblin II', is_skill_related: false },
+    { id: 'Base.RetailVHS_DogGoblin3', name: 'Dog Goblin III', is_skill_related: false },
+    { id: 'Base.RetailVHS_DogGoblin4', name: 'Dog Goblin IV', is_skill_related: false },
+    { id: 'Base.RetailVHS_GhoulStoppers', name: 'Ghoul Stoppers', is_skill_related: false },
+    { id: 'Base.RetailVHS_SlowDescent', name: 'Slow Descent', is_skill_related: false },
+    { id: 'Base.RetailVHS_DarkAgent', name: 'Dark Agent', is_skill_related: false },
+    { id: 'Base.RetailVHS_TimebergManor', name: 'Timeberg Manor', is_skill_related: false },
+    { id: 'Base.RetailVHS_AcePilot', name: 'Ace Pilot', is_skill_related: false },
+    { id: 'Base.RetailVHS_TiredInToronto', name: 'Tired in Toronto', is_skill_related: false },
+    { id: 'Base.RetailVHS_DeadWrong', name: 'Dead Wrong', is_skill_related: false, skill: 'SmallBlade' },
+    { id: 'Base.RetailVHS_MothersBoy', name: "Mother's Boy", is_skill_related: false, skill: 'SmallBlade' },
+    { id: 'Base.RetailVHS_Tangier', name: 'Tangier', is_skill_related: false },
+    { id: 'Base.RetailVHS_MollyBrown', name: 'Molly Brown', is_skill_related: false },
+    { id: 'Base.RetailVHS_ParisInTheRain', name: 'Paris in the Rain', is_skill_related: false },
+  ];
+  
+  recipeMagazines.forEach(item => {
+    stmt.run(item.id, item.name, 'Recipe Magazine', item.skill, 1, 1, true);
+  });
+  
+  retailMovies.forEach(item => {
+    const skillRelated = item.is_skill_related !== false;
+    stmt.run(item.id, item.name, 'VHS Movie', item.skill || null, 1, 1, skillRelated);
+  });
+  
+  tvShowsWithXP.forEach(item => {
+    stmt.run(item.id, item.name, 'VHS TV Show', item.skill || null, 1, 1, item.is_skill_related);
+  });
+  
+  tvShowsNoXP.forEach(item => {
+    stmt.run(item.id, item.name, 'VHS TV Show', item.skill || null, 1, 1, item.is_skill_related);
+  });
+  
+  woodcraftShows.forEach(item => {
+    stmt.run(item.id, item.name, 'VHS Home', item.skill, 1, 1, item.is_skill_related);
+  });
+  
+  survivalShows.forEach(item => {
+    stmt.run(item.id, item.name, 'VHS Home', item.skill, 1, 1, item.is_skill_related);
+  });
+  
+  fitnessShows.forEach(item => {
+    stmt.run(item.id, item.name, 'VHS Home', item.skill, 1, 1, item.is_skill_related);
+  });
+  
+  comicsAndPapers.forEach(item => {
+    stmt.run(item.id, item.name, 'Comic/Paper', item.skill || null, 1, 1, false);
+  });
+  
+  vhsTapes.forEach(item => {
+    stmt.run(item.id, item.name, 'VHS Home', item.skill, 1, 1, item.is_skill_related || true);
+  });
+  
+  recipeMagazines.forEach(item => {
+    stmt.run(item.id, item.name, 'Recipe Magazine', item.skill, 1, 1, true);
+  });
+  
+  retailMovies.forEach(item => {
+    const skillRelated = item.is_skill_related !== false;
+    stmt.run(item.id, item.name, 'VHS Movie', item.skill || null, 1, 1, skillRelated);
+  });
+  
+  tvShowsWithXP.forEach(item => {
+    stmt.run(item.id, item.name, 'VHS TV Show', item.skill || null, 1, 1, item.is_skill_related);
+  });
+  
+  tvShowsNoXP.forEach(item => {
+    stmt.run(item.id, item.name, 'VHS TV Show', item.skill || null, 1, 1, item.is_skill_related);
+  });
+  
+  woodcraftShows.forEach(item => {
+    stmt.run(item.id, item.name, 'VHS Home', item.skill, 1, 1, item.is_skill_related);
+  });
+  
+  survivalShows.forEach(item => {
+    stmt.run(item.id, item.name, 'VHS Home', item.skill, 1, 1, item.is_skill_related);
+  });
+  
+  fitnessShows.forEach(item => {
+    stmt.run(item.id, item.name, 'VHS Home', item.skill, 1, 1, item.is_skill_related);
+  });
+  
+  comicsAndPapers.forEach(item => {
+    stmt.run(item.id, item.name, 'VHS Home', item.skill || null, 1, 1, item.is_skill_related);
+  });
+  
+  retailMovies.forEach(item => {
+    const skillRelated = item.is_skill_related !== false;
+    stmt.run(item.id, item.name, 'VHS Movie', item.skill || null, 1, 1, skillRelated);
+  });
+  
+  tvShows.forEach(item => {
+    const skillRelated = item.is_skill_related !== false;
+    stmt.run(item.id, item.name, 'VHS TV Show', item.skill || null, 1, 1, skillRelated);
+  });
+  
+  vhsTapes.forEach(item => {
+    stmt.run(item.id, item.name, 'VHS Home', item.skill, 1, 1, item.is_skill_related || true);
+  });
+});
+
+function authenticateToken(req, res, next) {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
+  
+  if (!token) {
+    return res.status(401).json({ error: 'No token provided' });
+  }
+  
+  jwt.verify(token, JWT_SECRET, (err, user) => {
+    if (err) {
+      return res.status(403).json({ error: 'Invalid token' });
+    }
+    req.user = user;
+    next();
+  });
+}
+
+app.post('/api/register', async (req, res) => {
+  try {
+    const { username, password } = req.body;
+    
+    if (!username || !password) {
+      return res.status(400).json({ error: 'Username and password required' });
+    }
+    
+    if (password.length < 4) {
+      return res.status(400).json({ error: 'Password must be at least 4 characters' });
+    }
+    
+    const hashedPassword = await bcrypt.hash(password, 10);
+    
+    db.run('INSERT INTO users (username, password) VALUES (?, ?)', [username, hashedPassword], function(err) {
+      if (err) {
+        if (err.message.includes('UNIQUE constraint')) {
+          return res.status(400).json({ error: 'Username already exists' });
+        }
+        return res.status(500).json({ error: 'Registration failed' });
+      }
+      
+      const token = jwt.sign({ id: this.lastID, username }, JWT_SECRET, { expiresIn: '7d' });
+      res.json({ token, user: { id: this.lastID, username } });
+    });
+  } catch (error) {
+    res.status(500).json({ error: 'Registration failed' });
+  }
+});
+
+app.post('/api/login', async (req, res) => {
+  try {
+    const { username, password } = req.body;
+    
+    db.get('SELECT * FROM users WHERE username = ?', [username], async (err, user) => {
+      if (err) {
+        return res.status(500).json({ error: 'Login failed' });
+      }
+      
+      if (!user) {
+        return res.status(401).json({ error: 'Invalid credentials' });
+      }
+      
+      const validPassword = await bcrypt.compare(password, user.password);
+      
+      if (!validPassword) {
+        return res.status(401).json({ error: 'Invalid credentials' });
+      }
+      
+      const token = jwt.sign({ id: user.id, username: user.username }, JWT_SECRET, { expiresIn: '7d' });
+      res.json({ token, user: { id: user.id, username: user.username } });
+    });
+  } catch (error) {
+    res.status(500).json({ error: 'Login failed' });
+  }
+});
+
+app.get('/api/items', authenticateToken, (req, res) => {
+  try {
+    const { search, category } = req.query;
+    
+    let query = 'SELECT * FROM loot_items';
+    const params = [];
+    const conditions = [];
+    
+    if (search) {
+      conditions.push('name LIKE ?');
+      params.push(`%${search}%`);
+    }
+    
+    if (category) {
+      conditions.push('category = ?');
+      params.push(category);
+    }
+    
+    if (conditions.length > 0) {
+      query += ' WHERE ' + conditions.join(' AND ');
+    }
+    
+    query += ' ORDER BY category, skill, name';
+    
+    db.all(query, params, (err, items) => {
+      if (err) {
+        console.error('Error fetching items:', err);
+        return res.status(500).json({ error: 'Failed to fetch items' });
+      }
+      
+      db.all('SELECT item_id, volume_number, collected FROM user_progress WHERE user_id = ?', [req.user.id], (err, userProgress) => {
+        if (err) {
+          console.error('Error fetching progress:', err);
+          return res.status(500).json({ error: 'Failed to fetch progress' });
+        }
+        
+        const progressMap = {};
+        userProgress.forEach(p => {
+          const key = `${p.item_id}-${p.volume_number}`;
+          progressMap[key] = p.collected;
+        });
+        
+        const itemsWithProgress = items.map(item => ({
+          ...item,
+          collected: progressMap[`${item.id}-1`] || 0
+        }));
+        
+        res.json(itemsWithProgress);
+      });
+    });
+  } catch (error) {
+    console.error('Error fetching items:', error);
+    res.status(500).json({ error: 'Failed to fetch items' });
+  }
+});
+
+app.put('/api/items/:itemId', authenticateToken, (req, res) => {
+  try {
+    const { itemId } = req.params;
+    const { collected, volumeNumber = 1 } = req.body;
+    
+    db.get('SELECT id FROM loot_items WHERE base_id = ?', [itemId], (err, item) => {
+      if (err) {
+        console.error('Error finding item:', err);
+        return res.status(500).json({ error: 'Failed to find item' });
+      }
+      
+      if (!item) {
+        return res.status(404).json({ error: 'Item not found' });
+      }
+      
+      db.run(`
+        INSERT OR REPLACE INTO user_progress (user_id, item_id, volume_number, collected)
+        VALUES (?, ?, ?, ?)
+      `, [req.user.id, item.id, volumeNumber, collected ? 1 : 0], (err) => {
+        if (err) {
+          console.error('Error updating item:', err);
+          return res.status(500).json({ error: 'Failed to update item' });
+        }
+        res.json({ success: true });
+      });
+    });
+  } catch (error) {
+    console.error('Error updating item:', error);
+    res.status(500).json({ error: 'Failed to update item' });
+  }
+});
+
+app.get('/api/categories', authenticateToken, (req, res) => {
+  db.all('SELECT DISTINCT category FROM loot_items ORDER BY category', [], (err, rows) => {
+    if (err) {
+      return res.status(500).json({ error: 'Failed to fetch categories' });
+    }
+    res.json(rows.map(r => r.category));
+  });
+});
+
+app.get('/api/stats', authenticateToken, (req, res) => {
+  db.get('SELECT COUNT(*) as count FROM loot_items', [], (err, row) => {
+    if (err) {
+      return res.status(500).json({ error: 'Failed to fetch stats' });
+    }
+    const totalItems = row.count;
+    
+    db.get(`
+      SELECT COUNT(DISTINCT item_id) as count 
+      FROM user_progress 
+      WHERE user_id = ? AND collected = 1
+    `, [req.user.id], (err, row) => {
+      if (err) {
+        return res.status(500).json({ error: 'Failed to fetch stats' });
+      }
+      const collectedItems = row.count;
+      
+      db.all(`
+        SELECT l.category, COUNT(*) as total, 
+          COUNT(CASE WHEN p.collected = 1 THEN 1 END) as collected
+        FROM loot_items l
+        LEFT JOIN user_progress p ON l.id = p.item_id AND p.user_id = ?
+        GROUP BY l.category
+        ORDER BY l.category
+      `, [req.user.id], (err, byCategory) => {
+        if (err) {
+          return res.status(500).json({ error: 'Failed to fetch stats' });
+        }
+        
+        res.json({
+          total: totalItems,
+          collected: collectedItems,
+          percentage: Math.round((collectedItems / totalItems) * 100),
+          byCategory
+        });
+      });
+    });
+  });
+});
+
+app.post('/api/admin/login', async (req, res) => {
+  try {
+    const { username, password } = req.body;
+    
+    if (username !== 'admin') {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
+    
+    if (password !== adminPassword) {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
+    
+    const token = jwt.sign({ id: 0, username: 'admin', isAdmin: true }, JWT_SECRET, { expiresIn: '7d' });
+    res.json({ token, user: { id: 0, username: 'admin', isAdmin: true } });
+  } catch (error) {
+    res.status(500).json({ error: 'Login failed' });
+  }
+});
+
+app.post('/api/admin/change-password', authenticateToken, (req, res) => {
+  if (!req.user.isAdmin) {
+    return res.status(403).json({ error: 'Admin access required' });
+  }
+  
+  const { oldPassword, newPassword, confirmNewPassword } = req.body;
+  
+  if (oldPassword !== adminPassword) {
+    return res.status(400).json({ error: 'Contraseña actual incorrecta' });
+  }
+  
+  if (!newPassword || newPassword.length < 4) {
+    return res.status(400).json({ error: 'La nueva contraseña debe tener al menos 4 caracteres' });
+  }
+  
+  if (newPassword !== confirmNewPassword) {
+    return res.status(400).json({ error: 'Las contraseñas nuevas no coinciden' });
+  }
+  
+  adminPassword = newPassword;
+  res.json({ success: true });
+});
+
+app.get('/api/admin/users', authenticateToken, (req, res) => {
+  if (!req.user.isAdmin) {
+    return res.status(403).json({ error: 'Admin access required' });
+  }
+  
+  db.all('SELECT id, username, created_at FROM users ORDER BY created_at DESC', [], (err, users) => {
+    if (err) {
+      return res.status(500).json({ error: 'Failed to fetch users' });
+    }
+    
+    db.all(`
+      SELECT u.id, u.username, COUNT(DISTINCT up.item_id) as items_collected
+      FROM users u
+      LEFT JOIN user_progress up ON u.id = up.user_id AND up.collected = 1
+      GROUP BY u.id, u.username
+      ORDER BY u.username
+    `, [], (err, userStats) => {
+      if (err) {
+        return res.status(500).json({ error: 'Failed to fetch user stats' });
+      }
+      
+      const statsMap = {};
+      userStats.forEach(stat => {
+        statsMap[stat.id] = stat.items_collected;
+      });
+      
+      const usersWithStats = users.map(user => ({
+        ...user,
+        items_collected: statsMap[user.id] || 0
+      }));
+      
+      res.json(usersWithStats);
+    });
+  });
+});
+
+app.get('/api/admin/server-stats', authenticateToken, (req, res) => {
+  if (!req.user.isAdmin) {
+    return res.status(403).json({ error: 'Admin access required' });
+  }
+  
+  db.get('SELECT COUNT(*) as count FROM users', [], (err, row) => {
+    if (err) {
+      return res.status(500).json({ error: 'Failed to fetch stats' });
+    }
+    const userCount = row.count;
+    
+    db.get('SELECT COUNT(*) as count FROM loot_items', [], (err, row) => {
+      if (err) {
+        return res.status(500).json({ error: 'Failed to fetch stats' });
+      }
+      const itemCount = row.count;
+      
+      db.get('SELECT COUNT(*) as count FROM user_progress', [], (err, row) => {
+        if (err) {
+          return res.status(500).json({ error: 'Failed to fetch stats' });
+        }
+        const progressCount = row.count;
+        
+        const estimatedSizeKB = (userCount * 0.1) + (progressCount * 0.05);
+        const vercelFreeLimitMB = 100;
+        const usedMB = estimatedSizeKB / 1024;
+        const availableMB = Math.max(0, vercelFreeLimitMB - usedMB);
+        const usagePercentage = Math.min(100, (usedMB / vercelFreeLimitMB) * 100);
+        
+        res.json({
+          users: userCount,
+          total_items: itemCount,
+          total_progress_records: progressCount,
+          storage: {
+            used_mb: usedMB.toFixed(2),
+            available_mb: availableMB.toFixed(2),
+            percentage: usagePercentage.toFixed(2),
+            limit_mb: vercelFreeLimitMB
+          }
+        });
+      });
+    });
+  });
+});
+
+const cropsData = require('./crops_data');
+
+app.get('/api/crops', (req, res) => {
+  res.json(cropsData);
+});
+
+app.get('/api/crops/month/:month', (req, res) => {
+  const { month } = req.params;
+  
+  if (!cropsData) {
+    return res.status(500).json({ error: 'Crops data not available' });
+  }
+  
+  const monthKey = month.toLowerCase();
+  const validMonths = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+  
+  if (!validMonths.includes(monthKey)) {
+    return res.status(400).json({ error: 'Invalid month' });
+  }
+  
+  const cropsForMonth = Object.entries(cropsData)
+    .filter(([_, crop]) => crop.months[monthKey])
+    .map(([key, crop]) => ({
+      key,
+      name: crop.name,
+      nameEn: crop.nameEn,
+      icon: crop.icon,
+      growthTime: crop.growthTime,
+      calories: crop.calories,
+      status: crop.months[monthKey].status
+    }))
+    .sort((a, b) => {
+      const statusPriority = { 'best': 1, 'seasonal': 2, 'worst_in': 3, 'worst_out': 4 };
+      return statusPriority[a.status] - statusPriority[b.status];
+    });
+  
+  res.json(cropsForMonth);
+});
+
+app.get('*', (req, res) => {
+  const path = req.path;
+  if (path.startsWith('/api/')) {
+    return res.status(404).json({ error: 'API endpoint not found' });
+  }
+  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+});
+
+app.listen(PORT, () => {
+  console.log(`PZ Loot Tracker server running on port ${PORT}`);
+});
