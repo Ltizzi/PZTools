@@ -1,1545 +1,2399 @@
 {
   "skillBooks": [
     {
-      "id": "Base.MasonryBook1",
-      "name": "Masonería Vol. 1",
-      "skill": "Masonry"
-    },
-    {
-      "id": "Base.MasonryBook2",
-      "name": "Masonería Vol. 2",
-      "skill": "Masonry"
-    },
-    {
-      "id": "Base.MasonryBook3",
-      "name": "Masonería Vol. 3",
-      "skill": "Masonry"
-    },
-    {
-      "id": "Base.MasonryBook4",
-      "name": "Masonería Vol. 4",
-      "skill": "Masonry"
-    },
-    {
-      "id": "Base.MasonryBook5",
-      "name": "Masonería Vol. 5",
-      "skill": "Masonry"
-    },
-    {
-      "id": "Base.TrackingBook1",
-      "name": "Rastreo Vol. 1",
-      "skill": "Tracking"
-    },
-    {
-      "id": "Base.TrackingBook2",
-      "name": "Rastreo Vol. 2",
-      "skill": "Tracking"
-    },
-    {
-      "id": "Base.TrackingBook3",
-      "name": "Rastreo Vol. 3",
-      "skill": "Tracking"
-    },
-    {
-      "id": "Base.TrackingBook4",
-      "name": "Rastreo Vol. 4",
-      "skill": "Tracking"
-    },
-    {
-      "id": "Base.TrackingBook5",
-      "name": "Rastreo Vol. 5",
-      "skill": "Tracking"
-    },
-    {
-      "id": "Base.CarvingBook1",
-      "name": "Talla Vol. 1",
-      "skill": "Carving"
-    },
-    {
-      "id": "Base.CarvingBook2",
-      "name": "Talla Vol. 2",
-      "skill": "Carving"
-    },
-    {
-      "id": "Base.CarvingBook3",
-      "name": "Talla Vol. 3",
-      "skill": "Carving"
-    },
-    {
-      "id": "Base.CarvingBook4",
-      "name": "Talla Vol. 4",
-      "skill": "Carving"
-    },
-    {
-      "id": "Base.CarvingBook5",
-      "name": "Talla Vol. 5",
-      "skill": "Carving"
-    },
-    {
-      "id": "Base.PotteryBook1",
-      "name": "Alfarería Vol. 1",
-      "skill": "Pottery"
-    },
-    {
-      "id": "Base.PotteryBook2",
-      "name": "Alfarería Vol. 2",
-      "skill": "Pottery"
-    },
-    {
-      "id": "Base.PotteryBook3",
-      "name": "Alfarería Vol. 3",
-      "skill": "Pottery"
-    },
-    {
-      "id": "Base.PotteryBook4",
-      "name": "Alfarería Vol. 4",
-      "skill": "Pottery"
-    },
-    {
-      "id": "Base.PotteryBook5",
-      "name": "Alfarería Vol. 5",
-      "skill": "Pottery"
-    },
-    {
-      "id": "Base.AimingBook1",
-      "name": "Puntería Vol. 1",
-      "skill": "Aiming"
-    },
-    {
-      "id": "Base.AimingBook2",
-      "name": "Puntería Vol. 2",
-      "skill": "Aiming"
-    },
-    {
-      "id": "Base.AimingBook3",
-      "name": "Puntería Vol. 3",
-      "skill": "Aiming"
-    },
-    {
-      "id": "Base.AimingBook4",
-      "name": "Puntería Vol. 4",
-      "skill": "Aiming"
-    },
-    {
-      "id": "Base.AimingBook5",
-      "name": "Puntería Vol. 5",
-      "skill": "Aiming"
-    },
-    {
-      "id": "Base.ReloadingBook1",
-      "name": "Recarga Vol. 1",
-      "skill": "Reloading"
-    },
-    {
-      "id": "Base.ReloadingBook2",
-      "name": "Recarga Vol. 2",
-      "skill": "Reloading"
-    },
-    {
-      "id": "Base.ReloadingBook3",
-      "name": "Recarga Vol. 3",
-      "skill": "Reloading"
-    },
-    {
-      "id": "Base.ReloadingBook4",
-      "name": "Recarga Vol. 4",
-      "skill": "Reloading"
-    },
-    {
-      "id": "Base.ReloadingBook5",
-      "name": "Recarga Vol. 5",
-      "skill": "Reloading"
-    },
-    {
-      "id": "Base.AgricultureBook1",
-      "name": "Agricultura Vol. 1",
+      "id": "Base.BookFarming1",
+      "name": "Agriculture I: Better Gardening",
       "skill": "Agriculture"
     },
     {
-      "id": "Base.AgricultureBook2",
-      "name": "Agricultura Vol. 2",
+      "id": "Base.BookFarming2",
+      "name": "Agriculture II: Growing Food at Home",
       "skill": "Agriculture"
     },
     {
-      "id": "Base.AgricultureBook3",
-      "name": "Agricultura Vol. 3",
+      "id": "Base.BookFarming3",
+      "name": "Agriculture III: Liam Keating's Subsistence Farming",
       "skill": "Agriculture"
     },
     {
-      "id": "Base.AgricultureBook4",
-      "name": "Agricultura Vol. 4",
+      "id": "Base.BookFarming4",
+      "name": "Agriculture IV: The Science of Crop Genetics",
       "skill": "Agriculture"
     },
     {
-      "id": "Base.AgricultureBook5",
-      "name": "Agricultura Vol. 5",
+      "id": "Base.BookFarming5",
+      "name": "Agriculture V: USDA Guide to Agricultural Output",
       "skill": "Agriculture"
     },
     {
-      "id": "Base.CookingBook1",
-      "name": "Cocina Vol. 1",
-      "skill": "Cooking"
+      "id": "Base.BookAiming1",
+      "name": "Aiming I: Better Aiming",
+      "skill": "Aiming"
     },
     {
-      "id": "Base.CookingBook2",
-      "name": "Cocina Vol. 2",
-      "skill": "Cooking"
+      "id": "Base.BookAiming2",
+      "name": "Aiming II: Drawing and Shooting",
+      "skill": "Aiming"
     },
     {
-      "id": "Base.CookingBook3",
-      "name": "Cocina Vol. 3",
-      "skill": "Cooking"
+      "id": "Base.BookAiming3",
+      "name": "Aiming III: Leading Moving Targets",
+      "skill": "Aiming"
     },
     {
-      "id": "Base.CookingBook4",
-      "name": "Cocina Vol. 4",
-      "skill": "Cooking"
+      "id": "Base.BookAiming4",
+      "name": "Aiming IV: Long Range Sniping Tactics",
+      "skill": "Aiming"
     },
     {
-      "id": "Base.CookingBook5",
-      "name": "Cocina Vol. 5",
-      "skill": "Cooking"
+      "id": "Base.BookAiming5",
+      "name": "Aiming V: Secrets From the World's Best Snipers",
+      "skill": "Aiming"
     },
     {
-      "id": "Base.DoctorBook1",
-      "name": "Medicina Vol. 1",
-      "skill": "Doctor"
+      "id": "Base.BookHusbandry1",
+      "name": "Animal Care I: A Tale of St. Francis",
+      "skill": "Animal Care"
     },
     {
-      "id": "Base.DoctorBook2",
-      "name": "Medicina Vol. 2",
-      "skill": "Doctor"
+      "id": "Base.BookHusbandry2",
+      "name": "Animal Care II: Animal Welfare Basics",
+      "skill": "Animal Care"
     },
     {
-      "id": "Base.DoctorBook3",
-      "name": "Medicina Vol. 3",
-      "skill": "Doctor"
+      "id": "Base.BookHusbandry3",
+      "name": "Animal Care III: How Animals Think",
+      "skill": "Animal Care"
     },
     {
-      "id": "Base.DoctorBook4",
-      "name": "Medicina Vol. 4",
-      "skill": "Doctor"
+      "id": "Base.BookHusbandry4",
+      "name": "Animal Care IV: The Wants and Needs of Diverse Fauna",
+      "skill": "Animal Care"
     },
     {
-      "id": "Base.DoctorBook5",
-      "name": "Medicina Vol. 5",
-      "skill": "Doctor"
+      "id": "Base.BookHusbandry5",
+      "name": "Animal Care V: Wilds Tamed",
+      "skill": "Animal Care"
     },
     {
-      "id": "Base.ElectricianBook1",
-      "name": "Electricidad Vol. 1",
-      "skill": "Electricity"
+      "id": "Base.BookBlacksmith1",
+      "name": "Blacksmithing I: Elementary Forge Practice",
+      "skill": "Blacksmithing"
     },
     {
-      "id": "Base.ElectricianBook2",
-      "name": "Electricidad Vol. 2",
-      "skill": "Electricity"
+      "id": "Base.BookBlacksmith2",
+      "name": "Blacksmithing II: General Purpose Blacksmithing",
+      "skill": "Blacksmithing"
     },
     {
-      "id": "Base.ElectricianBook3",
-      "name": "Electricidad Vol. 3",
-      "skill": "Electricity"
+      "id": "Base.BookBlacksmith3",
+      "name": "Blacksmithing III: Old West Smiths",
+      "skill": "Blacksmithing"
     },
     {
-      "id": "Base.ElectricianBook4",
-      "name": "Electricidad Vol. 4",
-      "skill": "Electricity"
+      "id": "Base.BookBlacksmith4",
+      "name": "Blacksmithing IV: Really Hard Steel Co. Workers",
+      "skill": "Blacksmithing"
     },
     {
-      "id": "Base.ElectricianBook5",
-      "name": "Electricidad Vol. 5",
-      "skill": "Electricity"
+      "id": "Base.BookBlacksmith5",
+      "name": "Blacksmithing V: The Complete Encyclopedia of Metallurgy",
+      "skill": "Blacksmithing"
     },
     {
-      "id": "Base.FishingBook1",
-      "name": "Pesca Vol. 1",
-      "skill": "Fishing"
+      "id": "Base.BookButchering1",
+      "name": "Butchering I: Butchering Basics",
+      "skill": "Butchering"
     },
     {
-      "id": "Base.FishingBook2",
-      "name": "Pesca Vol. 2",
-      "skill": "Fishing"
+      "id": "Base.BookButchering2",
+      "name": "Butchering II: From Chuck to Shank",
+      "skill": "Butchering"
     },
     {
-      "id": "Base.FishingBook3",
-      "name": "Pesca Vol. 3",
-      "skill": "Fishing"
+      "id": "Base.BookButchering3",
+      "name": "Butchering III: Hunter's Guide to Butchering",
+      "skill": "Butchering"
     },
     {
-      "id": "Base.FishingBook4",
-      "name": "Pesca Vol. 4",
-      "skill": "Fishing"
+      "id": "Base.BookButchering4",
+      "name": "Butchering IV: Master Butcher's Complete Guide",
+      "skill": "Butchering"
     },
     {
-      "id": "Base.FishingBook5",
-      "name": "Pesca Vol. 5",
-      "skill": "Fishing"
+      "id": "Base.BookButchering5",
+      "name": "Butchering V: The Ergonomics of Tools in Meat Cutting",
+      "skill": "Butchering"
     },
     {
-      "id": "Base.ForagingBook1",
-      "name": "Forrajeo Vol. 1",
-      "skill": "Foraging"
-    },
-    {
-      "id": "Base.ForagingBook2",
-      "name": "Forrajeo Vol. 2",
-      "skill": "Foraging"
-    },
-    {
-      "id": "Base.ForagingBook3",
-      "name": "Forrajeo Vol. 3",
-      "skill": "Foraging"
-    },
-    {
-      "id": "Base.ForagingBook4",
-      "name": "Forrajeo Vol. 4",
-      "skill": "Foraging"
-    },
-    {
-      "id": "Base.ForagingBook5",
-      "name": "Forrajeo Vol. 5",
-      "skill": "Foraging"
-    },
-    {
-      "id": "Base.MechanicsBook1",
-      "name": "Mecánica Vol. 1",
-      "skill": "Mechanics"
-    },
-    {
-      "id": "Base.MechanicsBook2",
-      "name": "Mecánica Vol. 2",
-      "skill": "Mechanics"
-    },
-    {
-      "id": "Base.MechanicsBook3",
-      "name": "Mecánica Vol. 3",
-      "skill": "Mechanics"
-    },
-    {
-      "id": "Base.MechanicsBook4",
-      "name": "Mecánica Vol. 4",
-      "skill": "Mechanics"
-    },
-    {
-      "id": "Base.MechanicsBook5",
-      "name": "Mecánica Vol. 5",
-      "skill": "Mechanics"
-    },
-    {
-      "id": "Base.MetalworkingBook1",
-      "name": "Metalurgia Vol. 1",
-      "skill": "Metalworking"
-    },
-    {
-      "id": "Base.MetalworkingBook2",
-      "name": "Metalurgia Vol. 2",
-      "skill": "Metalworking"
-    },
-    {
-      "id": "Base.MetalworkingBook3",
-      "name": "Metalurgia Vol. 3",
-      "skill": "Metalworking"
-    },
-    {
-      "id": "Base.MetalworkingBook4",
-      "name": "Metalurgia Vol. 4",
-      "skill": "Metalworking"
-    },
-    {
-      "id": "Base.MetalworkingBook5",
-      "name": "Metalurgia Vol. 5",
-      "skill": "Metalworking"
-    },
-    {
-      "id": "Base.SprintingBook1",
-      "name": "Correr Vol. 1",
-      "skill": "Sprinting"
-    },
-    {
-      "id": "Base.SprintingBook2",
-      "name": "Correr Vol. 2",
-      "skill": "Sprinting"
-    },
-    {
-      "id": "Base.SprintingBook3",
-      "name": "Correr Vol. 3",
-      "skill": "Sprinting"
-    },
-    {
-      "id": "Base.SprintingBook4",
-      "name": "Correr Vol. 4",
-      "skill": "Sprinting"
-    },
-    {
-      "id": "Base.SprintingBook5",
-      "name": "Correr Vol. 5",
-      "skill": "Sprinting"
-    },
-    {
-      "id": "Base.SmallBladeBook1",
-      "name": "Armas Cortas Vol. 1",
-      "skill": "SmallBlade"
-    },
-    {
-      "id": "Base.SmallBladeBook2",
-      "name": "Armas Cortas Vol. 2",
-      "skill": "SmallBlade"
-    },
-    {
-      "id": "Base.SmallBladeBook3",
-      "name": "Armas Cortas Vol. 3",
-      "skill": "SmallBlade"
-    },
-    {
-      "id": "Base.SmallBladeBook4",
-      "name": "Armas Cortas Vol. 4",
-      "skill": "SmallBlade"
-    },
-    {
-      "id": "Base.SmallBladeBook5",
-      "name": "Armas Cortas Vol. 5",
-      "skill": "SmallBlade"
-    },
-    {
-      "id": "Base.BluntBook1",
-      "name": "Contundentes Vol. 1",
-      "skill": "Blunt"
-    },
-    {
-      "id": "Base.BluntBook2",
-      "name": "Contundentes Vol. 2",
-      "skill": "Blunt"
-    },
-    {
-      "id": "Base.BluntBook3",
-      "name": "Contundentes Vol. 3",
-      "skill": "Blunt"
-    },
-    {
-      "id": "Base.BluntBook4",
-      "name": "Contundentes Vol. 4",
-      "skill": "Blunt"
-    },
-    {
-      "id": "Base.BluntBook5",
-      "name": "Contundentes Vol. 5",
-      "skill": "Blunt"
-    },
-    {
-      "id": "Base.AxeBook1",
-      "name": "Hacha Vol. 1",
-      "skill": "Axe"
-    },
-    {
-      "id": "Base.AxeBook2",
-      "name": "Hacha Vol. 2",
-      "skill": "Axe"
-    },
-    {
-      "id": "Base.AxeBook3",
-      "name": "Hacha Vol. 3",
-      "skill": "Axe"
-    },
-    {
-      "id": "Base.AxeBook4",
-      "name": "Hacha Vol. 4",
-      "skill": "Axe"
-    },
-    {
-      "id": "Base.AxeBook5",
-      "name": "Hacha Vol. 5",
-      "skill": "Axe"
-    },
-    {
-      "id": "Base.LongBladeBook1",
-      "name": "Espadas Largas Vol. 1",
-      "skill": "LongBlade"
-    },
-    {
-      "id": "Base.LongBladeBook2",
-      "name": "Espadas Largas Vol. 2",
-      "skill": "LongBlade"
-    },
-    {
-      "id": "Base.LongBladeBook3",
-      "name": "Espadas Largas Vol. 3",
-      "skill": "LongBlade"
-    },
-    {
-      "id": "Base.LongBladeBook4",
-      "name": "Espadas Largas Vol. 4",
-      "skill": "LongBlade"
-    },
-    {
-      "id": "Base.LongBladeBook5",
-      "name": "Espadas Largas Vol. 5",
-      "skill": "LongBlade"
-    },
-    {
-      "id": "Base.SmallBluntBook1",
-      "name": "Armas Pequeñas Vol. 1",
-      "skill": "SmallBlunt"
-    },
-    {
-      "id": "Base.SmallBluntBook2",
-      "name": "Armas Pequeñas Vol. 2",
-      "skill": "SmallBlunt"
-    },
-    {
-      "id": "Base.SmallBluntBook3",
-      "name": "Armas Pequeñas Vol. 3",
-      "skill": "SmallBlunt"
-    },
-    {
-      "id": "Base.SmallBluntBook4",
-      "name": "Armas Pequeñas Vol. 4",
-      "skill": "SmallBlunt"
-    },
-    {
-      "id": "Base.SmallBluntBook5",
-      "name": "Armas Pequeñas Vol. 5",
-      "skill": "SmallBlunt"
-    },
-    {
-      "id": "Base.FitnessBook1",
-      "name": "Condición Física Vol. 1",
-      "skill": "Fitness"
-    },
-    {
-      "id": "Base.FitnessBook2",
-      "name": "Condición Física Vol. 2",
-      "skill": "Fitness"
-    },
-    {
-      "id": "Base.FitnessBook3",
-      "name": "Condición Física Vol. 3",
-      "skill": "Fitness"
-    },
-    {
-      "id": "Base.FitnessBook4",
-      "name": "Condición Física Vol. 4",
-      "skill": "Fitness"
-    },
-    {
-      "id": "Base.FitnessBook5",
-      "name": "Condición Física Vol. 5",
-      "skill": "Fitness"
-    },
-    {
-      "id": "Base.TailoringBook1",
-      "name": "Costura Vol. 1",
-      "skill": "Tailoring"
-    },
-    {
-      "id": "Base.TailoringBook2",
-      "name": "Costura Vol. 2",
-      "skill": "Tailoring"
-    },
-    {
-      "id": "Base.TailoringBook3",
-      "name": "Costura Vol. 3",
-      "skill": "Tailoring"
-    },
-    {
-      "id": "Base.TailoringBook4",
-      "name": "Costura Vol. 4",
-      "skill": "Tailoring"
-    },
-    {
-      "id": "Base.TailoringBook5",
-      "name": "Costura Vol. 5",
-      "skill": "Tailoring"
-    },
-    {
-      "id": "Base.TrappingBook1",
-      "name": "Trampas Vol. 1",
-      "skill": "Trapping"
-    },
-    {
-      "id": "Base.TrappingBook2",
-      "name": "Trampas Vol. 2",
-      "skill": "Trapping"
-    },
-    {
-      "id": "Base.TrappingBook3",
-      "name": "Trampas Vol. 3",
-      "skill": "Trapping"
-    },
-    {
-      "id": "Base.TrappingBook4",
-      "name": "Trampas Vol. 4",
-      "skill": "Trapping"
-    },
-    {
-      "id": "Base.TrappingBook5",
-      "name": "Trampas Vol. 5",
-      "skill": "Trapping"
-    },
-    {
-      "id": "Base.CarpentryBook1",
-      "name": "Carpintería Vol. 1",
+      "id": "Base.BookCarpentry1",
+      "name": "Carpentry I: A Guide to Nailing",
       "skill": "Carpentry"
     },
     {
-      "id": "Base.CarpentryBook2",
-      "name": "Carpintería Vol. 2",
+      "id": "Base.BookCarpentry2",
+      "name": "Carpentry II: Carpentry, Woodcraft Style",
       "skill": "Carpentry"
     },
     {
-      "id": "Base.CarpentryBook3",
-      "name": "Carpintería Vol. 3",
+      "id": "Base.BookCarpentry3",
+      "name": "Carpentry III: Hand Crafted Shelving",
       "skill": "Carpentry"
     },
     {
-      "id": "Base.CarpentryBook4",
-      "name": "Carpintería Vol. 4",
+      "id": "Base.BookCarpentry4",
+      "name": "Carpentry IV: Making Your Own Cabin From Scratch",
       "skill": "Carpentry"
     },
     {
-      "id": "Base.CarpentryBook5",
-      "name": "Carpintería Vol. 5",
+      "id": "Base.BookCarpentry5",
+      "name": "Carpentry V: Site Joinery and Architectural Carpentry",
       "skill": "Carpentry"
     },
     {
-      "id": "Base.GardeningBook1",
-      "name": "Jardinería Vol. 1",
-      "skill": "Gardening"
+      "id": "Base.BookCarving1",
+      "name": "Carving I: Beginners Carving",
+      "skill": "Carving"
     },
     {
-      "id": "Base.GardeningBook2",
-      "name": "Jardinería Vol. 2",
-      "skill": "Gardening"
+      "id": "Base.BookCarving2",
+      "name": "Carving II: Cool Woodshaping Projects!",
+      "skill": "Carving"
     },
     {
-      "id": "Base.GardeningBook3",
-      "name": "Jardinería Vol. 3",
-      "skill": "Gardening"
+      "id": "Base.BookCarving3",
+      "name": "Carving III: Grinling Gibbons: His Life and Works",
+      "skill": "Carving"
     },
     {
-      "id": "Base.GardeningBook4",
-      "name": "Jardinería Vol. 4",
-      "skill": "Gardening"
+      "id": "Base.BookCarving4",
+      "name": "Carving IV: Medieval Wood and Bone Carving",
+      "skill": "Carving"
     },
     {
-      "id": "Base.GardeningBook5",
-      "name": "Jardinería Vol. 5",
-      "skill": "Gardening"
+      "id": "Base.BookCarving5",
+      "name": "Carving V: The Art and Process of Natural Material Carving",
+      "skill": "Carving"
     },
     {
-      "id": "Base.PassingBook1",
-      "name": "Pases Vol. 1",
-      "skill": "Passing"
+      "id": "Base.BookCooking1",
+      "name": "Cooking I: Better Burger Flipping",
+      "skill": "Cooking"
     },
     {
-      "id": "Base.PassingBook2",
-      "name": "Pases Vol. 2",
-      "skill": "Passing"
+      "id": "Base.BookCooking2",
+      "name": "Cooking II: Essential Home Cooking Guide",
+      "skill": "Cooking"
     },
     {
-      "id": "Base.PassingBook3",
-      "name": "Pases Vol. 3",
-      "skill": "Passing"
+      "id": "Base.BookCooking3",
+      "name": "Cooking III: Flavorful Cuisine - 1993 Edition",
+      "skill": "Cooking"
     },
     {
-      "id": "Base.PassingBook4",
-      "name": "Pases Vol. 4",
-      "skill": "Passing"
+      "id": "Base.BookCooking4",
+      "name": "Cooking IV: Professional Tips from a Master Chef",
+      "skill": "Cooking"
     },
     {
-      "id": "Base.PassingBook5",
-      "name": "Pases Vol. 5",
-      "skill": "Passing"
+      "id": "Base.BookCooking5",
+      "name": "Cooking V: Ruban Vert Gourmet - Complete Cooking",
+      "skill": "Cooking"
+    },
+    {
+      "id": "Base.BookElectrician1",
+      "name": "Electrical I: Basic Electronics",
+      "skill": "Electrical"
+    },
+    {
+      "id": "Base.BookElectrician2",
+      "name": "Electrical II: Kentucky AV Guide '93",
+      "skill": "Electrical"
+    },
+    {
+      "id": "Base.BookElectrician3",
+      "name": "Electrical III: Practical Wiring Guide",
+      "skill": "Electrical"
+    },
+    {
+      "id": "Base.BookElectrician4",
+      "name": "Electrical IV: Telecommunications in the 20th Century",
+      "skill": "Electrical"
+    },
+    {
+      "id": "Base.BookElectrician5",
+      "name": "Electrical V: Understanding Integrated Controls",
+      "skill": "Electrical"
+    },
+    {
+      "id": "Base.BookFirstAid1",
+      "name": "First Aid I: A Scouts Injury Guide",
+      "skill": "First Aid"
+    },
+    {
+      "id": "Base.BookFirstAid2",
+      "name": "First Aid II: Bandaging and Suturing",
+      "skill": "First Aid"
+    },
+    {
+      "id": "Base.BookFirstAid3",
+      "name": "First Aid III: Emergency Paramedics Manual",
+      "skill": "First Aid"
+    },
+    {
+      "id": "Base.BookFirstAid4",
+      "name": "First Aid IV: Gray's Anatomy",
+      "skill": "First Aid"
+    },
+    {
+      "id": "Base.BookFirstAid5",
+      "name": "First Aid V: Surgical Techniques of the Operating Room",
+      "skill": "First Aid"
+    },
+    {
+      "id": "Base.BookFishing1",
+      "name": "Fishing I: Dean's Good Fishing Guide",
+      "skill": "Fishing"
+    },
+    {
+      "id": "Base.BookFishing2",
+      "name": "Fishing II: Fly Fishing, with JR Hartley",
+      "skill": "Fishing"
+    },
+    {
+      "id": "Base.BookFishing3",
+      "name": "Fishing III: Fresh and Saltwater Fishing",
+      "skill": "Fishing"
+    },
+    {
+      "id": "Base.BookFishing4",
+      "name": "Fishing IV: Latest Rod and Net Techniques",
+      "skill": "Fishing"
+    },
+    {
+      "id": "Base.BookFishing5",
+      "name": "Fishing V: The Authoritative Kentucky Fishing Guide",
+      "skill": "Fishing"
+    },
+    {
+      "id": "Base.BookForaging1",
+      "name": "Foraging I: A Feast in the Forest",
+      "skill": "Foraging"
+    },
+    {
+      "id": "Base.BookForaging2",
+      "name": "Foraging II: Dean's Guide to Sticks & Stones",
+      "skill": "Foraging"
+    },
+    {
+      "id": "Base.BookForaging3",
+      "name": "Foraging III: Finding The Treasure in the Trash",
+      "skill": "Foraging"
+    },
+    {
+      "id": "Base.BookForaging4",
+      "name": "Foraging IV: Survival Foraging",
+      "skill": "Foraging"
+    },
+    {
+      "id": "Base.BookForaging5",
+      "name": "Foraging V: US Park Service Complete Nature Census",
+      "skill": "Foraging"
+    },
+    {
+      "id": "Base.BookGlassmaking1",
+      "name": "Glassmaking I: Glass: A History",
+      "skill": "Glassmaking"
+    },
+    {
+      "id": "Base.BookGlassmaking2",
+      "name": "Glassmaking II: From Sand to Glass",
+      "skill": "Glassmaking"
+    },
+    {
+      "id": "Base.BookGlassmaking3",
+      "name": "Glassmaking III: Laboratory Manual of Glassblowing",
+      "skill": "Glassmaking"
+    },
+    {
+      "id": "Base.BookGlassmaking4",
+      "name": "Glassmaking IV: Secrets of the Carlow Crystal Makers",
+      "skill": "Glassmaking"
+    },
+    {
+      "id": "Base.BookGlassmaking5",
+      "name": "Glassmaking V: Venetian Glass",
+      "skill": "Glassmaking"
+    },
+    {
+      "id": "Base.BookFlintKnapping1",
+      "name": "Knapping I: Flint Knapping 101",
+      "skill": "Knapping"
+    },
+    {
+      "id": "Base.BookFlintKnapping2",
+      "name": "Knapping II: Guide to Kentucky Geology",
+      "skill": "Knapping"
+    },
+    {
+      "id": "Base.BookFlintKnapping3",
+      "name": "Knapping III: Lithic Technology Manual 1993",
+      "skill": "Knapping"
+    },
+    {
+      "id": "Base.BookFlintKnapping4",
+      "name": "Knapping IV: Schmidt Rock Hardness Testing",
+      "skill": "Knapping"
+    },
+    {
+      "id": "Base.BookFlintKnapping5",
+      "name": "Knapping V: Technological Morphometrics of Clovis",
+      "skill": "Knapping"
+    },
+    {
+      "id": "Base.BookLongBlade1",
+      "name": "Long Blade I: Cool Swords!",
+      "skill": "Long Blade"
+    },
+    {
+      "id": "Base.BookLongBlade2",
+      "name": "Long Blade II: Fencing: A History",
+      "skill": "Long Blade"
+    },
+    {
+      "id": "Base.BookLongBlade3",
+      "name": "Long Blade III: Old Sword-Play",
+      "skill": "Long Blade"
+    },
+    {
+      "id": "Base.BookLongBlade4",
+      "name": "Long Blade IV: The Zettels of Johannes Liechtenauer",
+      "skill": "Long Blade"
+    },
+    {
+      "id": "Base.BookLongBlade5",
+      "name": "Long Blade V: Wear Analysis of Medieval Swords",
+      "skill": "Long Blade"
+    },
+    {
+      "id": "Base.BookMaintenance1",
+      "name": "Maintenance I: Basic Repairs",
+      "skill": "Maintenance"
+    },
+    {
+      "id": "Base.BookMaintenance2",
+      "name": "Maintenance II: Better Tools, Made Easy",
+      "skill": "Maintenance"
+    },
+    {
+      "id": "Base.BookMaintenance3",
+      "name": "Maintenance III: Home Guide to Tool Repairs",
+      "skill": "Maintenance"
+    },
+    {
+      "id": "Base.BookMaintenance4",
+      "name": "Maintenance IV: Maintaining High Grade Tools",
+      "skill": "Maintenance"
+    },
+    {
+      "id": "Base.BookMaintenance5",
+      "name": "Maintenance V: Understanding Biomechanics of Tool Use",
+      "skill": "Maintenance"
+    },
+    {
+      "id": "Base.BookMasonry1",
+      "name": "Masonry I: A Bricklayer's Life",
+      "skill": "Masonry"
+    },
+    {
+      "id": "Base.BookMasonry2",
+      "name": "Masonry II: Flooring: Do It Yourself",
+      "skill": "Masonry"
+    },
+    {
+      "id": "Base.BookMasonry3",
+      "name": "Masonry III: Dibnah's Guide to Bricks",
+      "skill": "Masonry"
+    },
+    {
+      "id": "Base.BookMasonry4",
+      "name": "Masonry IV: Secrets of a Professional Mason",
+      "skill": "Masonry"
+    },
+    {
+      "id": "Base.BookMasonry5",
+      "name": "Masonry V: Statistical Analysis of Historic Masonry",
+      "skill": "Masonry"
+    },
+    {
+      "id": "Base.BookMechanic1",
+      "name": "Mechanics I: Carzone's Repair Guide",
+      "skill": "Mechanics"
+    },
+    {
+      "id": "Base.BookMechanic2",
+      "name": "Mechanics II: How Vehicle Engines Work",
+      "skill": "Mechanics"
+    },
+    {
+      "id": "Base.BookMechanic3",
+      "name": "Mechanics III: Laine's Repair Manual '93",
+      "skill": "Mechanics"
+    },
+    {
+      "id": "Base.BookMechanic4",
+      "name": "Mechanics IV: Long Term Vehicle Maintenance",
+      "skill": "Mechanics"
+    },
+    {
+      "id": "Base.BookMechanic5",
+      "name": "Mechanics V: Mastering Automotive Fault Diagnosis",
+      "skill": "Mechanics"
+    },
+    {
+      "id": "Base.BookPottery1",
+      "name": "Pottery I: Ancient Pottery",
+      "skill": "Pottery"
+    },
+    {
+      "id": "Base.BookPottery2",
+      "name": "Pottery II: Build Your Own Kiln",
+      "skill": "Pottery"
+    },
+    {
+      "id": "Base.BookPottery3",
+      "name": "Pottery III: Glazing Ceramics at Home",
+      "skill": "Pottery"
+    },
+    {
+      "id": "Base.BookPottery4",
+      "name": "Pottery IV: Ming Chinese Masterworks",
+      "skill": "Pottery"
+    },
+    {
+      "id": "Base.BookPottery5",
+      "name": "Pottery V: Pyrometamorphic Process of Ceramic",
+      "skill": "Pottery"
+    },
+    {
+      "id": "Base.BookReloading1",
+      "name": "Reloading I: Basic Reloading",
+      "skill": "Reloading"
+    },
+    {
+      "id": "Base.BookReloading2",
+      "name": "Reloading II: Dead Man's Click",
+      "skill": "Reloading"
+    },
+    {
+      "id": "Base.BookReloading3",
+      "name": "Reloading III: Jungle Style Reloading",
+      "skill": "Reloading"
+    },
+    {
+      "id": "Base.BookReloading4",
+      "name": "Reloading IV: Strippers, Speedloaders, Bolt Action",
+      "skill": "Reloading"
+    },
+    {
+      "id": "Base.BookReloading5",
+      "name": "Reloading V: The Ultimate Encyclopedia of Reloading",
+      "skill": "Reloading"
+    },
+    {
+      "id": "Base.BookTailoring1",
+      "name": "Tailoring I: Basic Clothing Repair",
+      "skill": "Tailoring"
+    },
+    {
+      "id": "Base.BookTailoring2",
+      "name": "Tailoring II: From Rags to Royalty",
+      "skill": "Tailoring"
+    },
+    {
+      "id": "Base.BookTailoring3",
+      "name": "Tailoring III: Haute Couture Tailoring Methods",
+      "skill": "Tailoring"
+    },
+    {
+      "id": "Base.BookTailoring4",
+      "name": "Tailoring IV: Modern Patterns from Paris",
+      "skill": "Tailoring"
+    },
+    {
+      "id": "Base.BookTailoring5",
+      "name": "Tailoring V: Textile Production Techniques",
+      "skill": "Tailoring"
+    },
+    {
+      "id": "Base.BookTracking1",
+      "name": "Tracking I: Animal Pawprints",
+      "skill": "Tracking"
+    },
+    {
+      "id": "Base.BookTracking2",
+      "name": "Tracking II: Hunting with Hemingway",
+      "skill": "Tracking"
+    },
+    {
+      "id": "Base.BookTracking3",
+      "name": "Tracking III: Long Range Animal Tracking",
+      "skill": "Tracking"
+    },
+    {
+      "id": "Base.BookTracking4",
+      "name": "Tracking IV: The Smell of Ivory",
+      "skill": "Tracking"
+    },
+    {
+      "id": "Base.BookTracking5",
+      "name": "Tracking V: Understanding Animal Behavior",
+      "skill": "Tracking"
+    },
+    {
+      "id": "Base.BookTrapping1",
+      "name": "Trapping I: Basic Pest Control",
+      "skill": "Trapping"
+    },
+    {
+      "id": "Base.BookTrapping2",
+      "name": "Trapping II: Better Trapping, with Dean",
+      "skill": "Trapping"
+    },
+    {
+      "id": "Base.BookTrapping3",
+      "name": "Trapping III: Park Rangers Wildlife Handbook",
+      "skill": "Trapping"
+    },
+    {
+      "id": "Base.BookTrapping4",
+      "name": "Trapping IV: Research on Rodents of Kentucky",
+      "skill": "Trapping"
+    },
+    {
+      "id": "Base.BookTrapping5",
+      "name": "Trapping V: Encyclopedia of Applied Animal Psych",
+      "skill": "Trapping"
+    },
+    {
+      "id": "Base.BookMetalWelding1",
+      "name": "Welding I: Basics of Welding",
+      "skill": "Welding"
+    },
+    {
+      "id": "Base.BookMetalWelding2",
+      "name": "Welding II: Building with Metal",
+      "skill": "Welding"
+    },
+    {
+      "id": "Base.BookMetalWelding3",
+      "name": "Welding III: Machining Metal",
+      "skill": "Welding"
+    },
+    {
+      "id": "Base.BookMetalWelding4",
+      "name": "Welding IV: Ore to Sheets",
+      "skill": "Welding"
+    },
+    {
+      "id": "Base.BookMetalWelding5",
+      "name": "Welding V: Technological Fundamentals of Metal",
+      "skill": "Welding"
     }
   ],
   "recipeMagazines": [
     {
-      "id": "Base.MechanicMag1",
-      "name": "Laines Standard Auto Manual",
-      "skill": "Mechanics"
-    },
-    {
-      "id": "Base.MechanicMag2",
-      "name": "Laines Commercial Auto Manual",
-      "skill": "Mechanics"
-    },
-    {
-      "id": "Base.MechanicMag3",
-      "name": "Laines Performance Auto Manual",
-      "skill": "Mechanics"
-    },
-    {
-      "id": "Base.ElectronicsMag1",
-      "name": "Zapper!",
-      "skill": "Electricity"
-    },
-    {
-      "id": "Base.ElectronicsMag2",
-      "name": "Like Clockwork",
-      "skill": "Electricity"
-    },
-    {
-      "id": "Base.ElectronicsMag3",
-      "name": "Home Security Monthly",
-      "skill": "Electricity"
-    },
-    {
-      "id": "Base.ElectronicsMag4",
-      "name": "How to Use Generators",
-      "skill": "Electricity"
-    },
-    {
-      "id": "Base.ElectronicsMag5",
-      "name": "Sparky's Lighting Guide",
-      "skill": "Electricity"
-    },
-    {
-      "id": "Base.RadioMag1",
-      "name": "Guerilla Radio - Junio 1993",
-      "skill": "Electricity"
-    },
-    {
-      "id": "Base.RadioMag2",
-      "name": "Sparky's Radio Guide",
-      "skill": "Electricity"
-    },
-    {
-      "id": "Base.RadioMag3",
-      "name": "Guerilla Radio - Mayo 1993",
-      "skill": "Electricity"
-    },
-    {
-      "id": "Base.EngineerMagazine1",
-      "name": "Real Spy Secrets - Junio 1993",
-      "skill": "Electricity"
-    },
-    {
-      "id": "Base.EngineerMagazine2",
-      "name": "Cheapskate's John - Guerra Química",
-      "skill": "Electricity"
-    },
-    {
-      "id": "Base.EngineerMagazine3",
-      "name": "Cheapskate's John - Explosivos",
-      "skill": "Electricity"
-    },
-    {
-      "id": "Base.SmithingMag1",
-      "name": "Everyday Smithing - Abril 1993",
-      "skill": "Metalworking"
-    },
-    {
-      "id": "Base.SmithingMag2",
-      "name": "Everyday Smithing - Mayo 1993",
-      "skill": "Metalworking"
-    },
-    {
-      "id": "Base.SmithingMag3",
-      "name": "Everyday Smithing - Junio 1993",
-      "skill": "Metalworking"
-    },
-    {
-      "id": "Base.SmithingMag4",
-      "name": "Small-Scale Smithing",
-      "skill": "Metalworking"
-    },
-    {
-      "id": "Base.SmithingMag5",
-      "name": "Blunt Forge",
-      "skill": "Metalworking"
-    },
-    {
-      "id": "Base.SmithingMag6",
-      "name": "Modern Metalworking at Home",
-      "skill": "Metalworking"
-    },
-    {
-      "id": "Base.SmithingMag7",
-      "name": "Medieval Armory - Junio 1993",
-      "skill": "Metalworking"
+      "id": "Base.TailoringMag9",
+      "name": "Magazine: Alpine Explorers",
+      "skill": null
     },
     {
       "id": "Base.SmithingMag8",
-      "name": "American Bladecraft",
-      "skill": "Metalworking"
-    },
-    {
-      "id": "Base.SmithingMag9",
-      "name": "Iron Age Metalworking",
-      "skill": "Metalworking"
-    },
-    {
-      "id": "Base.SmithingMag10",
-      "name": "Medieval Metalworking",
-      "skill": "Metalworking"
-    },
-    {
-      "id": "Base.SmithingMag11",
-      "name": "Medieval Armory - Mayo 1993",
-      "skill": "Metalworking"
-    },
-    {
-      "id": "Base.MetalworkMag1",
-      "name": "Welder Monthly - Junio 1993",
-      "skill": "Metalworking"
-    },
-    {
-      "id": "Base.MetalworkMag2",
-      "name": "Welder Monthly - Mayo 1993",
-      "skill": "Metalworking"
-    },
-    {
-      "id": "Base.MetalworkMag3",
-      "name": "Welder Monthly - Abril 1993",
-      "skill": "Metalworking"
-    },
-    {
-      "id": "Base.MetalworkMag4",
-      "name": "Welder Monthly - Marzo 1993",
-      "skill": "Metalworking"
-    },
-    {
-      "id": "Base.GlassmakingMag1",
-      "name": "Murano Glass Manual",
-      "skill": "Glassworking"
-    },
-    {
-      "id": "Base.GlassmakingMag2",
-      "name": "Carlow Crystal Guide",
-      "skill": "Glassworking"
-    },
-    {
-      "id": "Base.GlassmakingMag3",
-      "name": "Bottle Making at Home",
-      "skill": "Glassworking"
-    },
-    {
-      "id": "Base.CookingMag1",
-      "name": "Good Cooking - Junio 1993",
-      "skill": "Cooking"
-    },
-    {
-      "id": "Base.CookingMag2",
-      "name": "Good Cooking - Mayo 1993",
-      "skill": "Cooking"
-    },
-    {
-      "id": "Base.CookingMag3",
-      "name": "Italian Delights",
-      "skill": "Cooking"
-    },
-    {
-      "id": "Base.CookingMag4",
-      "name": "Grandma's Kitchen",
-      "skill": "Cooking"
-    },
-    {
-      "id": "Base.CookingMag5",
-      "name": "World Cooking",
-      "skill": "Cooking"
-    },
-    {
-      "id": "Base.CookingMag6",
-      "name": "Delicious Meals - Junio 1993",
-      "skill": "Cooking"
-    },
-    {
-      "id": "Base.FarmingMag1",
-      "name": "Kentucky Farmer - Junio 1993",
-      "skill": "Agriculture"
-    },
-    {
-      "id": "Base.FarmingMag2",
-      "name": "Kentucky Farmer - Mayo 1993",
-      "skill": "Agriculture"
-    },
-    {
-      "id": "Base.FarmingMag3",
-      "name": "Blooms and Blossoms",
-      "skill": "Agriculture"
-    },
-    {
-      "id": "Base.FarmingMag4",
-      "name": "The Farmers Guide",
-      "skill": "Agriculture"
+      "name": "Magazine: American Bladecraft",
+      "skill": "Welding"
     },
     {
       "id": "Base.FarmingMag5",
-      "name": "American Homesteading",
+      "name": "Magazine: American Homesteading",
       "skill": "Agriculture"
     },
     {
-      "id": "Base.FarmingMag6",
-      "name": "Cropping for Cash",
-      "skill": "Agriculture"
-    },
-    {
-      "id": "Base.FarmingMag7",
-      "name": "Growing Your Own",
-      "skill": "Agriculture"
-    },
-    {
-      "id": "Base.FarmingMag8",
-      "name": "Thyme Time",
-      "skill": "Agriculture"
-    },
-    {
-      "id": "Base.FarmingMag9",
-      "name": "Herbal Remedy Growing",
-      "skill": "Agriculture"
-    },
-    {
-      "id": "Base.HempMag1",
-      "name": "Legalize It!",
-      "skill": "Agriculture"
+      "id": "Base.TailoringMag1",
+      "name": "Magazine: Ancient Tailoring",
+      "skill": null
     },
     {
       "id": "Base.FishingMag1",
-      "name": "Angler USA - Junio 1993",
+      "name": "Magazine: Angler USA - June 1993",
       "skill": "Fishing"
     },
     {
       "id": "Base.FishingMag2",
-      "name": "Angler USA - Mayo 1993",
+      "name": "Magazine: Angler USA - May 1993",
       "skill": "Fishing"
     },
     {
-      "id": "Base.HuntingMag1",
-      "name": "Small Game Hunting",
-      "skill": "Trapping"
+      "id": "Base.ArmorMag5",
+      "name": "Magazine: Armor in the Iron Age",
+      "skill": null
     },
     {
-      "id": "Base.HuntingMag2",
-      "name": "The Hunter",
-      "skill": "Trapping"
+      "id": "Base.WeaponMag4",
+      "name": "Magazine: Bloody Japanese Wrestling Deathmatch!",
+      "skill": null
     },
     {
-      "id": "Base.TrappingMag1",
-      "name": "Modern Trapping",
-      "skill": "Trapping"
+      "id": "Base.FarmingMag3",
+      "name": "Magazine: Blooms and Blossoms",
+      "skill": "Agriculture"
     },
     {
-      "id": "Base.TrappingMag2",
-      "name": "Trapper's Monthly",
-      "skill": "Trapping"
+      "id": "Base.SmithingMag5",
+      "name": "Magazine: Blunt Forge",
+      "skill": "Welding"
     },
     {
-      "id": "Base.HouseholdMag1",
-      "name": "Household DIY",
-      "skill": "Carpentry"
+      "id": "Base.GlassmakingMag3",
+      "name": "Magazine: Bottle Making at Home",
+      "skill": "Glassmaking"
     },
     {
-      "id": "Base.HouseholdMag2",
-      "name": "Home Renovation",
-      "skill": "Carpentry"
-    },
-    {
-      "id": "Base.CarpentryMag1",
-      "name": "Woodwork Monthly - Julio 1993",
-      "skill": "Carpentry"
-    },
-    {
-      "id": "Base.CarpentryMag2",
-      "name": "Woodwork Monthly - Agosto 1993",
-      "skill": "Carpentry"
-    },
-    {
-      "id": "Base.CarpentryMag3",
-      "name": "Woodwork Monthly - Septiembre 1993",
-      "skill": "Carpentry"
-    },
-    {
-      "id": "Base.CarpentryMag4",
-      "name": "The Art of Making Things",
-      "skill": "Carpentry"
-    },
-    {
-      "id": "Base.CarpentryMag5",
-      "name": "Fixing Things",
-      "skill": "Carpentry"
-    },
-    {
-      "id": "Base.HomeImprovementMag1",
-      "name": "Home Improvement - Abril 1993",
-      "skill": "Carpentry"
-    },
-    {
-      "id": "Base.HomeImprovementMag2",
-      "name": "Home Improvement - Mayo 1993",
-      "skill": "Carpentry"
-    },
-    {
-      "id": "Base.HomeImprovementMag3",
-      "name": "Home Improvement - Junio 1993",
-      "skill": "Carpentry"
-    },
-    {
-      "id": "Base.TailoringMag1",
-      "name": "Tailoring Monthly - Junio 1993",
-      "skill": "Tailoring"
-    },
-    {
-      "id": "Base.TailoringMag2",
-      "name": "Tailoring Monthly - Mayo 1993",
-      "skill": "Tailoring"
-    },
-    {
-      "id": "Base.TailoringMag3",
-      "name": "Tailoring Monthly - Abril 1993",
-      "skill": "Tailoring"
-    },
-    {
-      "id": "Base.TailoringMag4",
-      "name": "Tailoring Monthly - Marzo 1993",
-      "skill": "Tailoring"
+      "id": "Base.GlassmakingMag2",
+      "name": "Magazine: Carlow Crystal Guide",
+      "skill": "Glassmaking"
     },
     {
       "id": "Base.TailoringMag5",
-      "name": "Thread & Needle",
-      "skill": "Tailoring"
+      "name": "Magazine: Cowboy Living",
+      "skill": null
     },
     {
-      "id": "Base.TailoringMag6",
-      "name": "Fashion Style - Julio 1993",
-      "skill": "Tailoring"
+      "id": "Base.FarmingMag6",
+      "name": "Magazine: Cropping for Cash",
+      "skill": "Agriculture"
+    },
+    {
+      "id": "Base.PrimitiveToolMag2",
+      "name": "Magazine: Cultures of Prehistory",
+      "skill": null
+    },
+    {
+      "id": "Base.CookingMag6",
+      "name": "Magazine: Delicious Meals - June 1993",
+      "skill": "Cooking"
+    },
+    {
+      "id": "Base.ArmorMag2",
+      "name": "Magazine: Early Indigenous Armor",
+      "skill": null
+    },
+    {
+      "id": "Base.ArmorMag4",
+      "name": "Magazine: European Armor in the Late Medieval Era",
+      "skill": null
+    },
+    {
+      "id": "Base.SmithingMag3",
+      "name": "Magazine: Everyday Smithing - April 1993",
+      "skill": "Welding"
+    },
+    {
+      "id": "Base.SmithingMag1",
+      "name": "Magazine: Everyday Smithing - June 1993",
+      "skill": "Welding"
+    },
+    {
+      "id": "Base.SmithingMag2",
+      "name": "Magazine: Everyday Smithing - May 1993",
+      "skill": "Welding"
+    },
+    {
+      "id": "Base.ArmorMag7",
+      "name": "Magazine: FBI Incident Report",
+      "skill": null
     },
     {
       "id": "Base.TailoringMag7",
-      "name": "Fashion Style - Agosto 1993",
-      "skill": "Tailoring"
+      "name": "Magazine: Fun in the Woods!",
+      "skill": null
+    },
+    {
+      "id": "Base.HuntingMag4",
+      "name": "Magazine: Get Stuffed",
+      "skill": "Trapping"
+    },
+    {
+      "id": "Base.CookingMag1",
+      "name": "Magazine: Good Cooking - June 1993",
+      "skill": "Cooking"
+    },
+    {
+      "id": "Base.CookingMag2",
+      "name": "Magazine: Good Cooking - May 1993",
+      "skill": "Cooking"
+    },
+    {
+      "id": "Base.CookingMag4",
+      "name": "Magazine: Grandma's Kitchen",
+      "skill": "Cooking"
+    },
+    {
+      "id": "Base.FarmingMag7",
+      "name": "Magazine: Growing Your Own",
+      "skill": "Agriculture"
+    },
+    {
+      "id": "Base.RadioMag1",
+      "name": "Magazine: Guerilla Radio - June 1993",
+      "skill": "Electrical"
+    },
+    {
+      "id": "Base.RadioMag3",
+      "name": "Magazine: Guerilla Radio - May 1993",
+      "skill": "Electrical"
+    },
+    {
+      "id": "Base.FarmingMag9",
+      "name": "Magazine: Herbal Remedy Growing",
+      "skill": "Agriculture"
+    },
+    {
+      "id": "Base.ElectronicsMag3",
+      "name": "Magazine: Home Security Monthly",
+      "skill": "Electrical"
+    },
+    {
+      "id": "Base.TailoringMag10",
+      "name": "Magazine: Homespun",
+      "skill": null
+    },
+    {
+      "id": "Base.ElectronicsMag4",
+      "name": "Magazine: How to Use Generators",
+      "skill": "Electrical"
+    },
+    {
+      "id": "Base.SmithingMag9",
+      "name": "Magazine: Iron Age Blacksmithing",
+      "skill": "Welding"
+    },
+    {
+      "id": "Base.CookingMag3",
+      "name": "Magazine: Italian Delights",
+      "skill": "Cooking"
+    },
+    {
+      "id": "Base.FarmingMag1",
+      "name": "Magazine: Kentucky Farmer - June 1993",
+      "skill": "Agriculture"
+    },
+    {
+      "id": "Base.FarmingMag2",
+      "name": "Magazine: Kentucky Farmer - May 1993",
+      "skill": "Agriculture"
+    },
+    {
+      "id": "Base.MechanicMag2",
+      "name": "Magazine: Laines Commercial Auto Manual",
+      "skill": "Mechanics"
+    },
+    {
+      "id": "Base.MechanicMag3",
+      "name": "Magazine: Laines Performance Auto Manual",
+      "skill": "Mechanics"
+    },
+    {
+      "id": "Base.MechanicMag1",
+      "name": "Magazine: Laines Standard Auto Manual",
+      "skill": "Mechanics"
+    },
+    {
+      "id": "Base.TailoringMag4",
+      "name": "Magazine: Leather Crafts",
+      "skill": null
+    },
+    {
+      "id": "Base.HempMag1",
+      "name": "Magazine: Legalize It!",
+      "skill": "Agriculture"
+    },
+    {
+      "id": "Base.ElectronicsMag2",
+      "name": "Magazine: Like Clockwork",
+      "skill": "Electrical"
+    },
+    {
+      "id": "Base.SmithingMag7",
+      "name": "Magazine: Medieval Armory - June 1993",
+      "skill": "Welding"
+    },
+    {
+      "id": "Base.SmithingMag11",
+      "name": "Magazine: Medieval Armory - May 1993",
+      "skill": "Welding"
+    },
+    {
+      "id": "Base.SmithingMag10",
+      "name": "Magazine: Medieval Blacksmithing",
+      "skill": "Welding"
+    },
+    {
+      "id": "Base.TailoringMag3",
+      "name": "Magazine: Medieval Peasant Clothing",
+      "skill": null
+    },
+    {
+      "id": "Base.SmithingMag6",
+      "name": "Magazine: Modern Blacksmithing at Home",
+      "skill": "Welding"
+    },
+    {
+      "id": "Base.GlassmakingMag1",
+      "name": "Magazine: Murano Glass Manual",
+      "skill": "Glassmaking"
+    },
+    {
+      "id": "Base.WeaponMag2",
+      "name": "Magazine: No Man's Land",
+      "skill": null
     },
     {
       "id": "Base.TailoringMag8",
-      "name": "Fashion Style - Septiembre 1993",
+      "name": "Magazine: Outdoor Gear, Done Right",
+      "skill": null
+    },
+    {
+      "id": "Base.ArmorMag1",
+      "name": "Magazine: Outfit Apocalypse",
+      "skill": null
+    },
+    {
+      "id": "Base.PrimitiveToolMag3",
+      "name": "Magazine: Pioneering Carvers",
+      "skill": null
+    },
+    {
+      "id": "Base.TailoringMag2",
+      "name": "Magazine: Punk Fashion",
+      "skill": null
+    },
+    {
+      "id": "Base.TailoringMag6",
+      "name": "Magazine: Real Gladiators",
+      "skill": null
+    },
+    {
+      "id": "Base.EngineerMagazine1",
+      "name": "Magazine: Real Spy Secrets - June 1993",
+      "skill": "Electrical"
+    },
+    {
+      "id": "Base.TrickMag1",
+      "name": "Magazine: Real Spy Secrets - May 1993",
+      "skill": null
+    },
+    {
+      "id": "Base.WeaponMag6",
+      "name": "Magazine: Revolting Peasants",
+      "skill": null
+    },
+    {
+      "id": "Base.ArmorMag3",
+      "name": "Magazine: Secrets of the Outback Outlaws",
+      "skill": null
+    },
+    {
+      "id": "Base.HuntingMag1",
+      "name": "Magazine: Small Game Hunting",
+      "skill": "Trapping"
+    },
+    {
+      "id": "Base.SmithingMag4",
+      "name": "Magazine: Small-Scale Smithing",
+      "skill": "Welding"
+    },
+    {
+      "id": "Base.ElectronicsMag5",
+      "name": "Magazine: Sparky's Lighting Guide",
+      "skill": "Electrical"
+    },
+    {
+      "id": "Base.RadioMag2",
+      "name": "Magazine: Sparky's Radio Guide",
+      "skill": "Electrical"
+    },
+    {
+      "id": "Base.ArmorMag6",
+      "name": "Magazine: Strange Histories",
+      "skill": null
+    },
+    {
+      "id": "Base.EngineerMagazine2",
+      "name": "Magazine: The Cheapskate's John - Chemical Warfare",
+      "skill": "Electrical"
+    },
+    {
+      "id": "Base.KeyMag1",
+      "name": "Magazine: The Cheapskate's John - Escaping Captivity",
+      "skill": null
+    },
+    {
+      "id": "Base.TrickMag2",
+      "name": "Magazine: The Cheapskate's John - Forging New Identities",
+      "skill": null
+    },
+    {
+      "id": "Base.EngineerMagazine3",
+      "name": "Magazine: The Cheapskate's John - Homemade Explosives",
+      "skill": "Electrical"
+    },
+    {
+      "id": "Base.WeaponMag3",
+      "name": "Magazine: The Cheapskate's John - Prison Defense",
+      "skill": null
+    },
+    {
+      "id": "Base.WeaponMag5",
+      "name": "Magazine: The Cheapskate's John - Street Violence",
+      "skill": null
+    },
+    {
+      "id": "Base.FarmingMag4",
+      "name": "Magazine: The Farmers Guide",
+      "skill": "Agriculture"
+    },
+    {
+      "id": "Base.WeaponMag1",
+      "name": "Magazine: The First Weapons",
+      "skill": null
+    },
+    {
+      "id": "Base.HuntingMag2",
+      "name": "Magazine: The Hunter",
+      "skill": "Trapping"
+    },
+    {
+      "id": "Base.WeaponMag7",
+      "name": "Magazine: The Louisville Bruiser",
+      "skill": null
+    },
+    {
+      "id": "Base.FarmingMag8",
+      "name": "Magazine: Thyme Time",
+      "skill": "Agriculture"
+    },
+    {
+      "id": "Base.PrimitiveToolMag1",
+      "name": "Magazine: Tool Use of Early Man",
+      "skill": null
+    },
+    {
+      "id": "Base.MetalworkMag3",
+      "name": "Magazine: Welder Monthly - April 1993",
+      "skill": "Welding"
+    },
+    {
+      "id": "Base.MetalworkMag1",
+      "name": "Magazine: Welder Monthly - June 1993",
+      "skill": "Welding"
+    },
+    {
+      "id": "Base.MetalworkMag4",
+      "name": "Magazine: Welder Monthly - March 1993",
+      "skill": "Welding"
+    },
+    {
+      "id": "Base.MetalworkMag2",
+      "name": "Magazine: Welder Monthly - May 1993",
+      "skill": "Welding"
+    },
+    {
+      "id": "Base.HerbalistMag",
+      "name": "Magazine: Wilderness Survival",
+      "skill": "Foraging"
+    },
+    {
+      "id": "Base.HuntingMag3",
+      "name": "Magazine: Wildlife Preserve",
+      "skill": "Trapping"
+    },
+    {
+      "id": "Base.KnittingMag1",
+      "name": "Magazine: Woolly Yarns - June 1993",
       "skill": "Tailoring"
     },
     {
-      "id": "Base.FirstAidBook",
-      "name": "Primeros Auxilios",
-      "skill": "FirstAid"
+      "id": "Base.KnittingMag2",
+      "name": "Magazine: Woolly Yarns - May 1993",
+      "skill": "Tailoring"
     },
     {
-      "id": "Base.DangerousToys",
-      "name": "Juguetes Peligrosos",
-      "skill": "Dispersed"
+      "id": "Base.CookingMag5",
+      "name": "Magazine: World Cooking",
+      "skill": "Cooking"
     },
     {
-      "id": "Base.AGMag1",
-      "name": "American Gamer - Junio 1993",
-      "skill": "Aiming"
+      "id": "Base.ElectronicsMag1",
+      "name": "Magazine: Zapper!",
+      "skill": "Electrical"
     },
     {
-      "id": "Base.AGMag2",
-      "name": "American Gamer - Julio 1993",
-      "skill": "Aiming"
+      "id": "Base.ArmorSchematic",
+      "name": "Armor Schematic",
+      "skill": null
     },
     {
-      "id": "Base.AGMag3",
-      "name": "American Gamer - Agosto 1993",
-      "skill": "Aiming"
+      "id": "Base.CookwareSchematic",
+      "name": "Cookware Schematic",
+      "skill": null
     },
     {
-      "id": "Base.AGMag4",
-      "name": "American Gamer - Septiembre 1993",
-      "skill": "Aiming"
+      "id": "Base.ExplosiveSchematic",
+      "name": "Explosives Schematic",
+      "skill": null
     },
     {
-      "id": "Base.HuntingRifleMag1",
-      "name": "Sniper - Junio 1993",
-      "skill": "Aiming"
+      "id": "Base.MeleeWeaponSchematic",
+      "name": "Melee Weapons Schematic",
+      "skill": null
     },
     {
-      "id": "Base.HuntingRifleMag2",
-      "name": "Sniper - Julio 1993",
-      "skill": "Aiming"
+      "id": "Base.RecipeClipping",
+      "name": "Recipe",
+      "skill": null
     },
     {
-      "id": "Base.HuntingRifleMag3",
-      "name": "Sniper - Agosto 1993",
-      "skill": "Aiming"
+      "id": "Base.SewingPattern",
+      "name": "Sewing Pattern",
+      "skill": null
     },
     {
-      "id": "Base.HuntingRifleMag4",
-      "name": "Sniper - Septiembre 1993",
-      "skill": "Aiming"
+      "id": "Base.SurvivalSchematic",
+      "name": "Survival Schematic",
+      "skill": null
+    },
+    {
+      "id": "Base.BSToolsSchematic",
+      "name": "Tools Schematic",
+      "skill": null
     }
   ],
   "tvShowsWithXP": [
     {
-      "id": "Base.HomeVHS_Exercise",
-      "name": "VHS Hogar - Ejercicio",
-      "skill": "Fitness",
+      "id": "Base.CarzoneE1",
+      "name": "Carzone Episode 1: Tire Maintenance",
+      "skill": "Mechanics",
       "is_skill_related": true
     },
     {
-      "id": "Base.HomeVHS_Carpentary",
-      "name": "VHS Hogar - Carpintería",
-      "skill": "Carpentry",
+      "id": "Base.CarzoneE2",
+      "name": "Carzone Episode 2: Engines",
+      "skill": "Mechanics",
       "is_skill_related": true
     },
     {
-      "id": "Base.HomeVHS_Fishing",
-      "name": "VHS Hogar - Pesca",
+      "id": "Base.CarzoneE3",
+      "name": "Carzone Episode 3: Windows",
+      "skill": "Mechanics",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.ExposureSurvivalE1",
+      "name": "Exposure Survival Episode 1: Fishing",
       "skill": "Fishing",
       "is_skill_related": true
     },
     {
-      "id": "Base.HomeVHS_Fitness",
-      "name": "VHS Hogar - Fitness",
+      "id": "Base.ExposureSurvivalE2",
+      "name": "Exposure Survival Episode 2: Bait",
+      "skill": "Fishing",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.ExposureSurvivalE3",
+      "name": "Exposure Survival Episode 3: Farming",
+      "skill": "Agriculture",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.ExposureSurvivalE4",
+      "name": "Exposure Survival Episode 4: Fire",
+      "skill": "Carpentry",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.ExposureSurvivalE5",
+      "name": "Exposure Survival Episode 5: Camping",
+      "skill": "Carpentry",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.ExposureSurvivalE6",
+      "name": "Exposure Survival Episode 6: Trapping",
+      "skill": "Trapping",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.ExposureSurvivalE7",
+      "name": "Exposure Survival Episode 7: Foraging",
+      "skill": "Foraging",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.ExposureSurvivalE8",
+      "name": "Exposure Survival Episode 8: Water Collection",
+      "skill": "Carpentry",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.CookShowE1",
+      "name": "The Cook Show Episode 1: Cake",
+      "skill": "Cooking",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.CookShowE2",
+      "name": "The Cook Show Episode 2: Soup",
+      "skill": "Cooking",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.CookShowE3",
+      "name": "The Cook Show Episode 3: Stew",
+      "skill": "Cooking",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.CookShowE4",
+      "name": "The Cook Show Episode 4: Salads",
+      "skill": "Cooking",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.CookShowE5",
+      "name": "The Cook Show Episode 5: Stir-Fry",
+      "skill": "Cooking",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.CookShowE6",
+      "name": "The Cook Show Episode 6: Sandwiches",
+      "skill": "Cooking",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.CookShowE7",
+      "name": "The Cook Show Episode 7: Pie",
+      "skill": "Cooking",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.WoodcraftE1",
+      "name": "Woodcraft Episode 1: Bookcases",
+      "skill": "Carpentry",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.WoodcraftE2",
+      "name": "Woodcraft Episode 2: Flooring and Signs",
+      "skill": "Carpentry",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.WoodcraftE3",
+      "name": "Woodcraft Episode 3: Frames and Walls",
+      "skill": "Carpentry",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.WoodcraftE4",
+      "name": "Woodcraft Episode 4: Shelves and Fencing",
+      "skill": "Carpentry",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.WoodcraftE5",
+      "name": "Woodcraft Episode 5: Doors",
+      "skill": "Carpentry",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.WoodcraftE6",
+      "name": "Woodcraft Episode 6: Beds and Tables",
+      "skill": "Carpentry",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.WoodcraftE7",
+      "name": "Woodcraft Episode 7: Stairs",
+      "skill": "Carpentry",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.FitnessClubE1",
+      "name": "Simon's Fitness Club Episode 1: Squats",
       "skill": "Fitness",
       "is_skill_related": true
     },
     {
-      "id": "Base.HomeVHS_Axes",
-      "name": "VHS Hogar - Hachas",
-      "skill": "Axe",
+      "id": "Base.FitnessClubE2",
+      "name": "Simon's Fitness Club Episode 2: Push-Ups",
+      "skill": "Fitness",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.FitnessClubE3",
+      "name": "Simon's Fitness Club Episode 3: Sit-Ups",
+      "skill": "Fitness",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.FitnessClubE4",
+      "name": "Simon's Fitness Club Episode 4: Burpees",
+      "skill": "Fitness",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.FitnessClubE5",
+      "name": "Simon's Fitness Club Episode 5: Weight Training",
+      "skill": "Fitness",
       "is_skill_related": true
     }
   ],
   "tvShowsNoXP": [
     {
+      "id": "Base.AlbertWellenS201",
+      "name": "Albert Wellen QC S2.01",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.AlbertWellenS202",
+      "name": "Albert Wellen QC S2.02",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.AlbertWellenS203",
+      "name": "Albert Wellen QC S2.03",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.AlbertWellenS204",
+      "name": "Albert Wellen QC S2.04",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.AlbertWellenS205",
+      "name": "Albert Wellen QC S2.05",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.BallincoolinS101",
+      "name": "Ballincoolin S1.01 - The Arrival",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.BallincoolinS102",
+      "name": "Ballincoolin S1.02 - The Father",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.BallincoolinS103",
+      "name": "Ballincoolin S1.03 - The Donkey Cart Race",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.BallincoolinS104",
+      "name": "Ballincoolin S1.04 - The Election",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.BallincoolinS105",
+      "name": "Ballincoolin S1.05 - The Departure",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.DeadWrongS201",
+      "name": "Dead Wrong: The Series S2.01 - Dead Day Afternoon",
+      "skill": "Aiming",
+      "is_skill_related": true,
+      "secondary_skill": "Reloading"
+    },
+    {
+      "id": "Base.DeadWrongS202",
+      "name": "Dead Wrong: The Series S2.02 - Dead First, Questions Later",
+      "skill": "Aiming",
+      "is_skill_related": true,
+      "secondary_skill": "Reloading"
+    },
+    {
+      "id": "Base.DeadWrongS203",
+      "name": "Dead Wrong: The Series S2.03 - The Sandwich Sniper",
+      "skill": "Aiming",
+      "is_skill_related": true,
+      "secondary_skill": "Reloading"
+    },
+    {
+      "id": "Base.DeadWrongS204",
+      "name": "Dead Wrong: The Series S2.04 - Deadface",
+      "skill": "Aiming",
+      "is_skill_related": true,
+      "secondary_skill": "Reloading"
+    },
+    {
+      "id": "Base.DeadWrongS205",
+      "name": "Dead Wrong: The Series S2.05 - The Explosive Bomb",
+      "skill": "Aiming",
+      "is_skill_related": true,
+      "secondary_skill": "Reloading"
+    },
+    {
+      "id": "Base.SpaceCrewS301",
+      "name": "Space Crew S3.01 - The Jansarian Smuggler",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.SpaceCrewS302",
+      "name": "Space Crew S3.02 - Attack of The Kerlan Pirates",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.SpaceCrewS303",
+      "name": "Space Crew S3.03 - The Missing Planet",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.SpaceCrewS304",
+      "name": "Space Crew S3.04 - The Pyramid of Ollarf",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.SpaceCrewS305",
+      "name": "Space Crew S3.05 - The Return",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.StrangelyTrueS201",
+      "name": "Strangely True S2.01 - The Redneck Beast",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.StrangelyTrueS202",
+      "name": "Strangely True S2.02 - The Abduction of Harry and Hannah Barrett",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.StrangelyTrueS203",
+      "name": "Strangely True S2.03 - Wendigo Ranch",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.StrangelyTrueS204",
+      "name": "Strangely True S2.04 - The Louisville Lights",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.StrangelyTrueS205",
+      "name": "Strangely True S2.05 - The Haunted Hunting Lodge of Valley Station",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.MagicalWoodlandE1",
+      "name": "The Magical Woodland Episode 1: Furbert",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.MagicalWoodlandE2",
+      "name": "The Magical Woodland Episode 2: Boris",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.MagicalWoodlandE3",
+      "name": "The Magical Woodland Episode 3: Moley",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.MagicalWoodlandE4",
+      "name": "The Magical Woodland Episode 4: Pancake",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.MagicalWoodlandE5",
+      "name": "The Magical Woodland Episode 5: Fluffyfoot",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.ModeratorsS201",
+      "name": "The Moderators S2.01",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.ModeratorsS202",
+      "name": "The Moderators S2.02",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.ModeratorsS203",
+      "name": "The Moderators S2.03",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.ModeratorsS204",
+      "name": "The Moderators S2.04",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.ModeratorsS205",
+      "name": "The Moderators S2.05",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.OmegaDepartmentS301",
+      "name": "The Omega Department S3.01",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.OmegaDepartmentS302",
+      "name": "The Omega Department S3.02",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.OmegaDepartmentS303",
+      "name": "The Omega Department S3.03",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.OmegaDepartmentS304",
+      "name": "The Omega Department S3.04",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.OmegaDepartmentS305",
+      "name": "The Omega Department S3.05",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.OmegaDepartmentS501",
+      "name": "The Omega Department S5.01",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.OmegaDepartmentS502",
+      "name": "The Omega Department S5.02",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.OmegaDepartmentS503",
+      "name": "The Omega Department S5.03",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.OmegaDepartmentS504",
+      "name": "The Omega Department S5.04",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.OmegaDepartmentS505",
+      "name": "The Omega Department S5.05",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.ThompsonsS301",
+      "name": "The Thompsons S3.01 - Herb's Hair",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.ThompsonsS302",
+      "name": "The Thompsons S3.02 - High Speed Tram",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.ThompsonsS303",
+      "name": "The Thompsons S3.03 - Marie Gets Fired",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.ThompsonsS304",
+      "name": "The Thompsons S3.04 - Lester Fails",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.ThompsonsS305",
+      "name": "The Thompsons S3.05 - Halloween House of Terror",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
       "id": "Base.WashingtonHighS501",
-      "name": "Washington High S5.01",
+      "name": "Washington High S5.01 - Driving Lesson",
       "skill": null,
       "is_skill_related": false
     },
     {
       "id": "Base.WashingtonHighS502",
-      "name": "Washington High S5.02",
+      "name": "Washington High S5.02 - Blind Date",
       "skill": null,
       "is_skill_related": false
     },
     {
       "id": "Base.WashingtonHighS503",
-      "name": "Washington High S5.03",
+      "name": "Washington High S5.03 - Caffeine Pills",
       "skill": null,
       "is_skill_related": false
     },
     {
       "id": "Base.WashingtonHighS504",
-      "name": "Washington High S5.04",
+      "name": "Washington High S5.04 - Class President",
       "skill": null,
       "is_skill_related": false
     },
     {
       "id": "Base.WashingtonHighS505",
-      "name": "Washington High S5.05",
+      "name": "Washington High S5.05 - Prom Night",
       "skill": null,
       "is_skill_related": false
     },
     {
-      "id": "Base.WashingtonHighS506",
-      "name": "Washington High S5.06",
+      "id": "Base.ZSquadS201",
+      "name": "Z-Squad S2.01",
       "skill": null,
       "is_skill_related": false
     },
     {
-      "id": "Base.WashingtonHighS507",
-      "name": "Washington High S5.07",
+      "id": "Base.ZSquadS202",
+      "name": "Z-Squad S2.02",
       "skill": null,
       "is_skill_related": false
     },
     {
-      "id": "Base.WashingtonHighS508",
-      "name": "Washington High S5.08",
+      "id": "Base.ZSquadS203",
+      "name": "Z-Squad S2.03",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.ZSquadS204",
+      "name": "Z-Squad S2.04",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.ZSquadS205",
+      "name": "Z-Squad S2.05",
       "skill": null,
       "is_skill_related": false
     }
   ],
   "retailMovies": [
     {
-      "id": "Base.BreakingPoints",
-      "name": "Breaking Points",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.ManOnTheRun",
-      "name": "Man on the Run",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.DawnOfTheDead",
-      "name": "El Amanecer de los Muertos",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.SilentTile",
-      "name": "Baldosa Silenciosa",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.SundayService",
-      "name": "Servicio Dominical",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.TheArtist",
-      "name": "El Artista",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.TheDistance",
-      "name": "La Distancia",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.TheLady",
-      "name": "La Dama",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.ThinRedLine",
-      "name": "Fina Línea Roja",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.ThisIsTheEnd",
-      "name": "Este es el Final",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.Untitled",
-      "name": "Sin Título",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.WhatHappened",
-      "name": "Qué Sucedió",
-      "skill": null,
-      "is_skill_related": false
-    }
-  ],
-  "woodcraftShows": [
-    {
-      "id": "Base.WoodcraftE1",
-      "name": "Woodcraft Episodio 1: Cajas de Libros",
-      "skill": "Carpentry",
-      "is_skill_related": true,
-      "xp": 62.5
-    },
-    {
-      "id": "Base.WoodcraftE2",
-      "name": "Woodcraft Episodio 2: Pisos y Señales",
-      "skill": "Carpentry",
-      "is_skill_related": true,
-      "xp": 50
-    },
-    {
-      "id": "Base.WoodcraftE3",
-      "name": "Woodcraft Episodio 3: Marcos y Paredes",
-      "skill": "Carpentry",
-      "is_skill_related": true,
-      "xp": 62.5
-    },
-    {
-      "id": "Base.WoodcraftE4",
-      "name": "Woodcraft Episodio 4: Estanterías y Cercas",
-      "skill": "Carpentry",
-      "is_skill_related": true,
-      "xp": 75
-    },
-    {
-      "id": "Base.WoodcraftE5",
-      "name": "Woodcraft Episodio 5: Puertas y Escaleras",
-      "skill": "Carpentry",
-      "is_skill_related": true,
-      "xp": 62.5
-    },
-    {
-      "id": "Base.WoodcraftE6",
-      "name": "Woodcraft Episodio 6: Camas y Mesas",
-      "skill": "Carpentry",
-      "is_skill_related": true,
-      "xp": 62.5
-    },
-    {
-      "id": "Base.WoodcraftE7",
-      "name": "Woodcraft Episodio 7: Sillas y Mesas",
-      "skill": "Carpentry",
-      "is_skill_related": true,
-      "xp": 62.5
-    }
-  ],
-  "survivalShows": [
-    {
-      "id": "Base.ExposureSurvivalE1",
-      "name": "Exposure Survival Episodio 1: Pesca",
-      "skill": "Fishing",
-      "is_skill_related": true,
-      "xp": 50
-    },
-    {
-      "id": "Base.ExposureSurvivalE2",
-      "name": "Exposure Survival Episodio 2: Agricultura",
-      "skill": "Agriculture",
-      "is_skill_related": true,
-      "xp": 87.5
-    },
-    {
-      "id": "Base.ExposureSurvivalE3",
-      "name": "Exposure Survival Episodio 3: Carpintería",
-      "skill": "Carpentry",
-      "is_skill_related": true,
-      "xp": 75
-    },
-    {
-      "id": "Base.ExposureSurvivalE4",
-      "name": "Exposure Survival Episodio 4: Carpintería y Forrajeo",
-      "skill": "Carpentry",
-      "is_skill_related": true,
-      "xp": 50
-    },
-    {
-      "id": "Base.ExposureSurvivalE5",
-      "name": "Exposure Survival Episodio 5: Trampas",
-      "skill": "Trapping",
-      "is_skill_related": true,
-      "xp": 125
-    },
-    {
-      "id": "Base.ExposureSurvivalE6",
-      "name": "Exposure Survival Episodio 6: Forrajeo",
-      "skill": "Foraging",
-      "is_skill_related": true,
-      "xp": 87.5
-    },
-    {
-      "id": "Base.ExposureSurvivalE7",
-      "name": "Exposure Survival Episodio 7: Carpintería",
-      "skill": "Carpentry",
-      "is_skill_related": true,
-      "xp": 87.5
-    },
-    {
-      "id": "Base.ExposureSurvivalE8",
-      "name": "Exposure Survival Episodio 8: Colección de Agua",
-      "skill": "Carpentry",
-      "is_skill_related": true,
-      "xp": 45
-    }
-  ],
-  "fitnessShows": [
-    {
-      "id": "Base.SimonsFitnessClubE1",
-      "name": "Simon's Fitness Club Episodio 1: Sentadillas",
-      "skill": "Fitness",
-      "is_skill_related": true,
-      "xp": 16
-    },
-    {
-      "id": "Base.SimonsFitnessClubE2",
-      "name": "Simon's Fitness Club Episodio 2: Flexiones",
-      "skill": "Fitness",
-      "is_skill_related": true,
-      "xp": 15
-    },
-    {
-      "id": "Base.SimonsFitnessClubE3",
-      "name": "Simon's Fitness Club Episodio 3: Sentadillas y Flexiones",
-      "skill": "Fitness",
-      "is_skill_related": true,
-      "xp": 15
-    },
-    {
-      "id": "Base.SimonsFitnessClubE4",
-      "name": "Simon's Fitness Club Episodio 4: Burpees",
-      "skill": "Fitness",
-      "is_skill_related": true,
-      "xp": 15
-    },
-    {
-      "id": "Base.SimonsFitnessClubE5",
-      "name": "Simon's Fitness Club Episodio 5: Entrenamiento de Peso",
-      "skill": "Fitness",
-      "is_skill_related": true,
-      "xp": 15
-    }
-  ],
-  "comicsAndPapers": [
-    {
-      "id": "Base.ComicBook1",
-      "name": "El Gigante de Kentucky",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.ComicBook2",
-      "name": "Spiffo Increíble",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.ComicBook3",
-      "name": "Las Aventuras de Spiffo",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.ComicBook4",
-      "name": "Spiffo en el Callejón",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.ComicBook5",
-      "name": "Spiffo vs El Zombi",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.ComicBook6",
-      "name": "El Regreso de Spiffo",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.ComicBook7",
-      "name": "Spiffo Salvaje",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.Magazine1",
-      "name": "Revista de Moda",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.Magazine2",
-      "name": "Revista de Cine",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.Magazine3",
-      "name": "Revista de Coches",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.Magazine4",
-      "name": "Revista de Jardinería",
-      "skill": "Agriculture",
+      "id": "Base.MothersBoy",
+      "name": "Mother's Boy",
+      "skill": "Short Blade",
       "is_skill_related": true
     },
     {
-      "id": "Base.Magazine5",
-      "name": "Revista de Decoración",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.Magazine6",
-      "name": "Revista de Electrónica",
-      "skill": "Electricity",
+      "id": "Base.DeadWrongMovie",
+      "name": "Dead Wrong: The Movie",
+      "skill": "Aiming",
       "is_skill_related": true
-    },
-    {
-      "id": "Base.Magazine7",
-      "name": "Revista de Mecánica",
-      "skill": "Mechanics",
-      "is_skill_related": true
-    },
-    {
-      "id": "Base.Magazine8",
-      "name": "Revista de Carpintería",
-      "skill": "Carpentry",
-      "is_skill_related": true
-    },
-    {
-      "id": "Base.Newspaper1",
-      "name": "Periódico Viejo",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.Newspaper2",
-      "name": "Periódico Knox County",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.Newspaper3",
-      "name": "Periódico de Muldraugh",
-      "skill": null,
-      "is_skill_related": false
-    },
-    {
-      "id": "Base.Newspaper4",
-      "name": "Periódico West Point",
-      "skill": null,
-      "is_skill_related": false
     }
   ],
+  "woodcraftShows": [],
+  "survivalShows": [],
+  "fitnessShows": [],
+  "comicsAndPapers": [],
   "vhsTapes": [
     {
-      "id": "Base.HomeVHS_Cooking",
-      "name": "VHS Hogar - Cocina",
-      "skill": "Cooking",
+      "id": "Base.HomeVHS012",
+      "name": "Home VHS #012",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHS8thBirthday",
+      "name": "Home VHS 8th Birthday",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSPARRA",
+      "name": "Home VHS ARRA Pitch",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSAlaskanGulf",
+      "name": "Home VHS Alaskan Gulf Documentary",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSAlvaRichards1",
+      "name": "Home VHS Alva Richards (Ashling Dwyer)",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSAlvaRichards2",
+      "name": "Home VHS Alva Richards (Pierce Daniels)",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSSummer",
+      "name": "Home VHS Baby Summer!",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSBasicGunHandling",
+      "name": "Home VHS Basic Gun Handling (Officer Use Only)",
+      "skill": "Aiming",
       "is_skill_related": true
     },
     {
-      "id": "Base.HomeVHS_Electricity",
-      "name": "VHS Hogar - Electricidad",
-      "skill": "Electricity",
+      "id": "Base.HomeVHSPleistocene",
+      "name": "Home VHS Bauman and Triskel (Pleistocene Land)",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSPleistoApr15",
+      "name": "Home VHS Bauman and Triskel April 15",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSPleistoApr8",
+      "name": "Home VHS Bauman and Triskel April 8",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSPleisto14",
+      "name": "Home VHS Bauman/Triskel 14",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSBlackHoles",
+      "name": "Home VHS Black Holes space doc",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSBrent21st",
+      "name": "Home VHS Brent's 21st",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSZacharyBunny",
+      "name": "Home VHS Brushing Your Teeth with Zachary Bunny",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSCapeCanaveral",
+      "name": "Home VHS CAPE CANAVERAL VACATION July 1990",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSCCCW",
+      "name": "Home VHS CCCW",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSCaringForEmployees",
+      "name": "Home VHS Caring For Your Employees",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSChristmasEve",
+      "name": "Home VHS Christmas Eve Visit!",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSCitiesLagos",
+      "name": "Home VHS Cities of the World - Lagos",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSCitiesParis",
+      "name": "Home VHS Cities of the World - Paris",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSCitiesSeoul",
+      "name": "Home VHS Cities of the World - Seoul",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSCombatWound",
+      "name": "Home VHS Combat Wound Management",
+      "skill": "First Aid",
       "is_skill_related": true
     },
     {
-      "id": "Base.HomeVHS_Foraging",
-      "name": "VHS Hogar - Forrajeo",
-      "skill": "Foraging",
+      "id": "Base.HomeVHSDMWedding",
+      "name": "Home VHS D&M's Wedding",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSDADSTAPE",
+      "name": "Home VHS DAD'S TAPE DO NOT TOUCH",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSDadsGolf",
+      "name": "Home VHS Dad's boring golf crap",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSDadsShows",
+      "name": "Home VHS Dad's shows",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSDangerousStrangers",
+      "name": "Home VHS Dangerous Strangers with Jemima Bunny",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSDatingFemale",
+      "name": "Home VHS Dating Agency (Female)",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSDatingMale",
+      "name": "Home VHS Dating Agency (Male)",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSDentalCare",
+      "name": "Home VHS Dental Care",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSElijah1st",
+      "name": "Home VHS ELIJAH 1ST BDAY",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSEnglishCup",
+      "name": "Home VHS English Cup (4.12.91)",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSEveryReason",
+      "name": "Home VHS Every Reason Tape!!",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSFlorida",
+      "name": "Home VHS FLORIDA VACATION June 1991",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSFairweather",
+      "name": "Home VHS Fairweather-Mahoney 2/11/93",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSFinalRegards",
+      "name": "Home VHS Final Regards",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSFlightTraining",
+      "name": "Home VHS Flight Training #6",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSForScott",
+      "name": "Home VHS For Scott",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSFortKnox",
+      "name": "Home VHS Fort Knox Documentary",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSGabby",
+      "name": "Home VHS Gabby first steps",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSGators",
+      "name": "Home VHS Gators doc",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSGolf",
+      "name": "Home VHS Golf #14",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSGradysKing",
+      "name": "Home VHS Grady v King",
+      "skill": "Lightfooted",
       "is_skill_related": true
     },
     {
-      "id": "Base.HomeVHS_Mechanics",
-      "name": "VHS Hogar - Mecánica",
-      "skill": "Mechanics",
-      "is_skill_related": true
+      "id": "Base.HomeVHSGrampa",
+      "name": "Home VHS Grampa Message",
+      "skill": null,
+      "is_skill_related": false
     },
     {
-      "id": "Base.HomeVHS_Sandpaper",
-      "name": "VHS Hogar - Lijado",
-      "skill": "Carpentry",
-      "is_skill_related": true
+      "id": "Base.HomeVHSGrandma80th",
+      "name": "Home VHS Grandma's 80th",
+      "skill": null,
+      "is_skill_related": false
     },
     {
-      "id": "Base.HomeVHS_S_firstaid",
-      "name": "VHS Hogar - Primeros Auxilios",
-      "skill": "FirstAid",
-      "is_skill_related": true
-    },
-    {
-      "id": "Base.HomeVHS_Tailoring",
-      "name": "VHS Hogar - Costura",
+      "id": "Base.HomeVHSGrannyNani",
+      "name": "Home VHS Granny Nani",
       "skill": "Tailoring",
       "is_skill_related": true
     },
     {
-      "id": "Base.HomeVHS_Trapping",
-      "name": "VHS Hogar - Trampas",
-      "skill": "Trapping",
+      "id": "Base.HomeVHSHollywood",
+      "name": "Home VHS HOLLYWOOD INSIDER SPECIAL",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSHairDyeing",
+      "name": "Home VHS Hair Dyeing at Home",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSHaoFirst",
+      "name": "Home VHS Hao first Words!",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSBaseball490",
+      "name": "Home VHS Honey Bears v. Rangers 5.8.92 (Baseball)",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSBaseball491",
+      "name": "Home VHS Hurricanes v. Mothballs 4.22.91",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSIreland89",
+      "name": "Home VHS IRELAND VACATION 1989",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSJ13th",
+      "name": "Home VHS J 13th birthday",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSJanie",
+      "name": "Home VHS Janie's tape",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSJeffKaylee",
+      "name": "Home VHS Jeff/Kaylee Vegas Wedding",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSJenn18th",
+      "name": "Home VHS Jenn's 18th",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSJoniJim",
+      "name": "Home VHS Joni-Jim Proposal vid!!",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSKNCF",
+      "name": "Home VHS KNCF",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSKafka",
+      "name": "Home VHS Kafka Animated - A Message from the Emperor",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSKeithBday",
+      "name": "Home VHS Keith's Big Birthday!",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HHSKentuckyFurlongs",
+      "name": "Home VHS Kentucky Furlongs (5.2.92)",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSKidShows",
+      "name": "Home VHS Kid shows",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSLarryRap",
+      "name": "Home VHS LARRY'S RAP DEMO (PRACTICE)",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSJackson4th",
+      "name": "Home VHS Little Jackson's 4th Bday",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSLopezGrady",
+      "name": "Home VHS Lopez-Grady fight",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSMomsTape",
+      "name": "Home VHS MOM'S TAPE",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSMagicalFox",
+      "name": "Home VHS Magical Woodland Fox",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSMath",
+      "name": "Home VHS Mathematical Quadratics and Algebraic Configurations",
+      "skill": "Long Blunt",
       "is_skill_related": true
     },
     {
-      "id": "Base.HomeVHS_Gardening1",
-      "name": "VHS Hogar - Jardinería 1",
-      "skill": "Gardening",
+      "id": "Base.HomeVHSModerators",
+      "name": "Home VHS Moderators",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSBaseball291",
+      "name": "Home VHS Mothballs v. Honey Bears 2.16.91",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSMuhammet",
+      "name": "Home VHS Muhammet's First Words",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSOSCC92",
+      "name": "Home VHS OSCC '92",
+      "skill": "Mechanics",
       "is_skill_related": true
     },
     {
-      "id": "Base.HomeVHS_Gardening2",
-      "name": "VHS Hogar - Jardinería 2",
-      "skill": "Gardening",
+      "id": "Base.HomeVHSOhioRiver",
+      "name": "Home VHS Ohio River",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSDONT",
+      "name": "Home VHS Omega Department - DO NOT TAPE OVER",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSOmegaS3E2",
+      "name": "Home VHS Omega Department - S3 E2",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSGhostTown",
+      "name": "Home VHS Omega Department ghost town",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSDarts",
+      "name": "Home VHS One Eighty (darts)",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSOohShut",
+      "name": "Home VHS Ooh, Shut That Door! S7E5",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSWedding888",
+      "name": "Home VHS Our Wedding 19.1.88",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSPlayingBruce",
+      "name": "Home VHS Playing with Bruce",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSFuneral",
+      "name": "Home VHS Preparing a Funeral (What Really Happens)",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSQuizShows",
+      "name": "Home VHS QUIZ SHOWS",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSQuentin16th",
+      "name": "Home VHS Quentin's 16th",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSRMFA",
+      "name": "Home VHS RMFA",
+      "skill": "First Aid",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.HomeVHSBaseball892",
+      "name": "Home VHS Rangers v. Hurricanes 8.12.92 (Baseball)",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSBaseball1290",
+      "name": "Home VHS Rangers v. Mothballs 12.8.90",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSReverend",
+      "name": "Home VHS Reverend Quigley",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HHSRiversideClassic",
+      "name": "Home VHS Riverside Classic '92",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSFootie",
+      "name": "Home VHS Riverside vs West Point footie",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSRoger",
+      "name": "Home VHS Roger's VHS",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSST4",
+      "name": "Home VHS ST 4",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSDatingAdvice",
+      "name": "Home VHS Sandy Perry's Dating Advice",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSRecital",
+      "name": "Home VHS School recital",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSSauce",
+      "name": "Home VHS Secrets of Spiffo's Special Sauce",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSShows",
+      "name": "Home VHS Shows",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSSoaps",
+      "name": "Home VHS Soaps Tape",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSSpiffo92",
+      "name": "Home VHS Spiffo World June 1992",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSSunday",
+      "name": "Home VHS Sunday Night Late 12/20/92",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSSunset",
+      "name": "Home VHS Sunset Drive",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSTDTOE",
+      "name": "Home VHS TDTOE",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSTVRepair",
+      "name": "Home VHS TV repair",
+      "skill": "Electrical",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.HomeVHSTailoring101",
+      "name": "Home VHS Tailoring 101",
+      "skill": "Tailoring",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.HomeVHSTempest",
+      "name": "Home VHS Tempest",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSSatanism",
+      "name": "Home VHS The Signs of Satanism",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSTracyPolly",
+      "name": "Home VHS Tracy & Polly 8th Bday (Cute!)",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSTreePlanting",
+      "name": "Home VHS Tree Planting Guide",
+      "skill": "Agriculture",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.HomeVHSCommodities",
+      "name": "Home VHS Trends in Commodities",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSJoneses",
+      "name": "Home VHS Up with the Joneses",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSWashingonHigh",
+      "name": "Home VHS Washington High DO NOT TOUCH",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSWedding",
+      "name": "Home VHS Wedding video!!!!",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSWillAna",
+      "name": "Home VHS Will/Ana Wedding",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSXYZ",
+      "name": "Home VHS XYZ's with Abe E. Seez!",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSXmas91",
+      "name": "Home VHS Xmas '91",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSXmasPlay",
+      "name": "Home VHS Xmas Play",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSBeach91",
+      "name": "Home VHS beach summer 91",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSConspiracy",
+      "name": "Home VHS conspiracy crap???",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSHorseRace",
+      "name": "Home VHS horse race",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSMolly",
+      "name": "Home VHS molly june 30",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSMoocows",
+      "name": "Home VHS moocows",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSSoccer",
+      "name": "Home VHS muldraugh v west point soccer",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSNo9",
+      "name": "Home VHS no 9",
+      "skill": "Welding",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.HomeVHSNoFence",
+      "name": "Home VHS nof vid",
+      "skill": "Welding",
+      "is_skill_related": true
+    },
+    {
+      "id": "Base.HomeVHSOurWorld",
+      "name": "Home VHS our world #9",
+      "skill": null,
+      "is_skill_related": false
+    },
+    {
+      "id": "Base.HomeVHSStockCars",
+      "name": "Home VHS stock cars",
+      "skill": "Mechanics",
       "is_skill_related": true
     }
   ]

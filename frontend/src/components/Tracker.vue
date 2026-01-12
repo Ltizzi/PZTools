@@ -255,9 +255,8 @@ export default {
           headers: { 'Authorization': `Bearer ${this.token}` }
         })
         if (response.ok) {
-          const data = await response.json()
-          const exportItems = data.items || []
-          const blob = new Blob([JSON.stringify({ items: exportItems }, null, 2)], { type: 'application/json' })
+          const items = await response.json()
+          const blob = new Blob([JSON.stringify(items, null, 2)], { type: 'application/json' })
           const url = URL.createObjectURL(blob)
           const a = document.createElement('a')
           a.href = url
@@ -276,7 +275,7 @@ export default {
       try {
         const text = await file.text()
         const data = JSON.parse(text)
-        const items = data.items || data
+        const items = Array.isArray(data) ? data : data.items
         
         if (!Array.isArray(items)) {
           alert('Archivo de importación inválido')

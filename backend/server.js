@@ -187,20 +187,14 @@ app.get('/api/stats', authenticateToken, (req, res) => {
 app.post('/api/export-tracker', authenticateToken, (req, res) => {
   try {
     const userId = req.user.id;
-    db.all('SELECT li.*, ui.collected FROM loot_items li LEFT JOIN user_items ui ON li.id = ui.item_id AND ui.user_id = ?', [userId], (err, items) => {
+    db.all('SELECT li.id, li.base_id, li.name, li.category, li.skill FROM loot_items li INNER JOIN user_items ui ON li.id = ui.item_id AND ui.user_id = ? AND ui.collected = 1', [userId], (err, items) => {
       if (err) return res.status(500).json({ error: 'Failed to export tracker data' });
       
       const exportItems = items.map(item => ({
-        base_id: item.base_id,
-        name: item.name,
-        category: item.category,
-        skill: item.skill,
-        collected: item.collected === 1
+        name: item.name
       }));
       
-      res.json({
-        items: exportItems
-      });
+      res.json(exportItems);
     });
   } catch (error) {
     console.error('Error exporting tracker data:', error);
@@ -217,13 +211,11 @@ app.post('/api/import-tracker', authenticateToken, (req, res) => {
       return res.status(400).json({ error: 'Datos de importación inválidos' });
     }
     
-    db.all('SELECT id, base_id, name FROM loot_items', (err, allItems) => {
+    db.all('SELECT id, name FROM loot_items', (err, allItems) => {
       if (err) return res.status(500).json({ error: 'Failed to fetch items' });
       
-      const itemMapById = new Map();
       const itemMapByName = new Map();
       allItems.forEach(item => {
-        itemMapById.set(item.base_id, item.id);
         itemMapByName.set(item.name.toLowerCase().trim(), item.id);
       });
       
@@ -232,20 +224,17 @@ app.post('/api/import-tracker', authenticateToken, (req, res) => {
       let notFound = 0;
       
       items.forEach(item => {
-        let lootItemId = itemMapById.get(item.base_id);
-        
-        if (!lootItemId && item.name) {
-          lootItemId = itemMapByName.get(item.name.toLowerCase().trim());
-        }
+        const itemName = (item.name || item).toLowerCase().trim();
+        const lootItemId = itemMapByName.get(itemName);
         
         if (lootItemId) {
           db.get('SELECT collected FROM user_items WHERE user_id = ? AND item_id = ?', [userId, lootItemId], (err, existing) => {
             if (err) return;
-            if (existing) {
+            if (existing && existing.collected === 1) {
               skipped++;
             } else {
-              db.run('INSERT INTO user_items (user_id, item_id, collected, volume_number) VALUES (?, ?, ?, 1)', 
-                [userId, lootItemId, item.collected ? 1 : 0], (err) => {
+              db.run('INSERT OR REPLACE INTO user_items (user_id, item_id, collected, volume_number) VALUES (?, ?, 1, 1)', 
+                [userId, lootItemId], (err) => {
                   if (!err) imported++;
                 });
             }
