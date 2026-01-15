@@ -19,6 +19,21 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
+let isDBConnected = false;
+
+app.use(async (req, res, next) => {
+  if (!isDBConnected && process.env.VERCEL === '1') {
+    try {
+      await connectDB();
+      await seedLootItems();
+      isDBConnected = true;
+    } catch (err) {
+      console.error('DB connection error:', err);
+    }
+  }
+  next();
+});
+
 function authenticateToken(req, res, next) {
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1];
@@ -361,12 +376,11 @@ app.get('*', (req, res) => {
 const startServer = async () => {
   await connectDB();
   await seedLootItems();
-  
-  if (process.env.VERCEL === '1') {
-    module.exports = app;
-  } else {
-    app.listen(PORT, () => console.log(`PZ Loot Tracker server running on port ${PORT}`));
-  }
+  app.listen(PORT, () => console.log(`PZ Loot Tracker server running on port ${PORT}`));
 };
 
-startServer();
+if (process.env.VERCEL !== '1') {
+  startServer();
+}
+
+module.exports = app;
