@@ -401,7 +401,7 @@ export default {
         <div class="text-3xl sm:text-4xl mb-2 text-center">{{ getItemIcon(item.category) }}</div>
         <h3 class="font-semibold text-base sm:text-lg mb-1" :class="{ 'line-through opacity-75': item.collected }">{{ item.displayName }}</h3>
         <p v-if="item.skill" class="text-xs sm:text-sm text-gray-400">📚 {{ translateSkill(item.skill) }}</p>
-        <div v-if="!item.is_skill_related" class="mt-2 flex items-center gap-2 text-xs text-orange-400">
+        <div v-if="item.is_skill_related === false" class="mt-2 flex items-center gap-2 text-xs text-orange-400">
           <span class="text-base">❌</span>
           <span>-no skill related-</span>
         </div>
@@ -413,7 +413,7 @@ export default {
       <div v-for="item in filteredItems" :key="item.id" :id="'item-' + item.id" class="item-card rounded-lg p-2 sm:p-3 cursor-pointer text-center" :class="{ 'collected': item.collected }" @click="toggleItem(item)">
         <div class="text-2xl sm:text-3xl mb-1">{{ getItemIcon(item.category) }}</div>
         <div class="text-xs sm:text-sm font-medium" :class="{ 'line-through opacity-75': item.collected }">{{ item.displayName }}</div>
-        <div v-if="!item.is_skill_related" class="text-xs text-orange-400 mt-1">❌ -no skill related-</div>
+        <div v-if="item.is_skill_related === false" class="text-xs text-orange-400 mt-1">❌ -no skill related-</div>
         <div v-if="item.collected" class="text-xs text-green-300 mt-1">✓</div>
       </div>
     </div>
@@ -427,7 +427,7 @@ export default {
             <span>{{ translateCategory(item.category) }}</span>
             <span v-if="item.skill">•</span>
             <span v-if="item.skill">{{ translateSkill(item.skill) }}</span>
-            <span v-if="!item.is_skill_related" class="text-orange-400">• ❌ -no skill related-</span>
+            <span v-if="item.is_skill_related === false" class="text-orange-400">• ❌ -no skill related-</span>
           </div>
         </div>
         <div class="text-xl sm:text-2xl ml-3 sm:ml-4">{{ item.collected ? '✅' : '⬜' }}</div>
