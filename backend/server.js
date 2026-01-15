@@ -361,7 +361,12 @@ app.get('*', (req, res) => {
 const startServer = async () => {
   await connectDB();
   await seedLootItems();
-  app.listen(PORT, () => console.log(`PZ Loot Tracker server running on port ${PORT}`));
+  
+  if (process.env.VERCEL === '1') {
+    module.exports = app;
+  } else {
+    app.listen(PORT, () => console.log(`PZ Loot Tracker server running on port ${PORT}`));
+  }
 };
 
 startServer();
